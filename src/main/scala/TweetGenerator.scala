@@ -29,11 +29,13 @@ import scalaj.http.{Http, HttpResponse}
 object TweetGenerator extends Serializable {
   def main(args: Array[String]): Unit = {
 
+    //Inställningar för twitter
     System.setProperty("twitter4j.oauth.consumerKey", "pgd3EgAAYy0NsHfc6TD5XA4m0")
     System.setProperty("twitter4j.oauth.consumerSecret", "cp7LR8o4FQTc72cszuFoiQP0BQcEkpgoOHMqMn0mSLu6KFoxek")
     System.setProperty("twitter4j.oauth.accessToken", "384519993-dSTbfXUJe2FOaAnxPdw22i1s4QFj83MWtgBFMhZs")
     System.setProperty("twitter4j.oauth.accessTokenSecret", "W3uxu0BdpqIhuByjaa2xWXm2Ae6yFuIofI4dTyKzz87wa")
 
+    //Inställningar för Kafka
     val zkQuorum = "localhost:2181"
     val group = "my-group"
     val topics = "twitterdata,keyworddata"
@@ -43,6 +45,7 @@ object TweetGenerator extends Serializable {
     val ssc = new StreamingContext(sparkConf, Seconds(2))
     ssc.sparkContext.setLogLevel("OFF")
 
+    //Inställningar för elasticsearch
     sparkConf.set("es.index.auto.create", "true")
     sparkConf.set("es.resource", "visualization/tweets")
     sparkConf.set("es.nodes", "localhost")
@@ -53,8 +56,9 @@ object TweetGenerator extends Serializable {
     //val keywords = ssc.sparkContext.broadcast(loadKeyWordsFile())
     //val filter = keywords.value
 
-/*
 
+    //Försök på att ta emot keyword genom subscribe istället för DStream
+/*
     val properties = new Properties()
     properties.put("bootstrap.servers", "localhost:9092")
     properties.put("group.id", "my-group")
@@ -69,10 +73,12 @@ object TweetGenerator extends Serializable {
     println(keywords)*/
 
 
-
-
     val topicMap = topics.split(",").map((_, numThreads.toInt)).toMap
+
+    //Kafka topic för att ta emot Tweets
     val kafkaTweets = KafkaUtils.createStream(ssc, zkQuorum, group, Map("twitterdata" -> 1)).map(_._2)
+
+    //Kafka topic för att ta emot keywords
     val kafkaKeywords = KafkaUtils.createStream(ssc, zkQuorum, group, Map("keyworddata" -> 1)).map(_._2)
 
     kafkaKeywords.print()
@@ -82,6 +88,8 @@ object TweetGenerator extends Serializable {
     val finalArray = new ArrayBuffer[String]()
     val words = kafkaKeywords.flatMap(_.split(" "))
 
+
+    //Hämta ut relaterade ord för varje keyword från Google
     words.foreachRDD(rdd => if (!rdd.isEmpty()) {
       wordArray ++= rdd.collect()
       println("Array: " + wordArray)
@@ -97,51 +105,26 @@ object TweetGenerator extends Serializable {
       })
     })
 
+    //Måste filtrera Twitter-strömmen på ett eller annat sätt
+    kafkaTweets.filter(_.contains(finalArray))
 
-    val tweetStreamMapped = kafkaTweets.map {status => {
-      println(status)
-      val matches = finalArray.filter {term => status.contains(term)}
-      val matchArray = matches.map {keyword => (keyword, status)}
-      val matchLB = ListBuffer(matchArray: _ *)
-      matchLB.toList
-    }}
-
-    tweetStreamMapped.print()
-    /*
-    words.foreachRDD(rdd => if (!rdd.isEmpty()) {
-      rdd.foreach(word => {
-        val keywordList: List[String] = getGoogleList(word)
-        println(keywordList)
-      })
-    })*/
-
-/*
-    val returnedList = words.map(rdd => {
-      rdd.foreach(word => {
-        val keywordList: List[String] = getGoogleList(rdd)
-        println(keywordList)
-      })
-    })*/
+    kafkaTweets.print()
 
 
     //val testArray = new ArrayBuffer[String]()
-    //testArray.append("Trump", "Obama", "Clinton")
+    //testArray.append("Obama")
 
+    //Hämtar ut Tweets direkt från Twitter. Fördelen är att man kan sätta upp en HashMap som kan användas i Elasticsearch.
     /*
-    finalArray.toList
     val query = new FilterQuery()
-
     val filter = finalArray.mkString(",")
     query.track(filter)
 
-
     val tweets = TwitterUtils.createFilteredStream(ssc, None, Some(query))
-
-
 
     val tweetMap = tweets.map(status => {
       finalArray.foreach(word => {
-        println("Contains keyword: " + status.getText.contains(word))
+        println("Contains keyword: " + (status.getText.contains(word) || status.getHashtagEntities().map(_.getText).contains(word)))
       })
       val hashtags = status.getHashtagEntities().map(_.getText)
       val formatter = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss")
@@ -165,18 +148,6 @@ object TweetGenerator extends Serializable {
     })*/
 
 
-
-
-
-
-
-
-
-
-    //kafkaTweets.print()
-    //tweetMap.print()
-
-
     ssc.start()
     ssc.awaitTermination()
   }
@@ -190,13 +161,7 @@ object TweetGenerator extends Serializable {
     val json = parse(response.body)
     val listObject = json \\ "name"
     val list: List[String] = listObject \\ classOf[JString]
-
     list
-
-  }
-
-  def containsKeyword(keywords: ArrayBuffer[String], statusText: String): Boolean = {
-    true
   }
 
 

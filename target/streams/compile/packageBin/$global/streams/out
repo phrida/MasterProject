@@ -2,22 +2,16 @@
 [0m[[0mdebug[0m] [0mInput file mappings:[0m
 [0m[[0mdebug[0m] [0m	TweetGenerator$$anonfun$1.class[0m
 [0m[[0mdebug[0m] [0m	  /Users/Phrida/IdeaProjects/Masterprosjekt/target/scala-2.11/classes/TweetGenerator$$anonfun$1.class[0m
-[0m[[0mdebug[0m] [0m	TweetGenerator$$anonfun$5.class[0m
-[0m[[0mdebug[0m] [0m	  /Users/Phrida/IdeaProjects/Masterprosjekt/target/scala-2.11/classes/TweetGenerator$$anonfun$5.class[0m
 [0m[[0mdebug[0m] [0m	TweetGenerator$$anonfun$2.class[0m
 [0m[[0mdebug[0m] [0m	  /Users/Phrida/IdeaProjects/Masterprosjekt/target/scala-2.11/classes/TweetGenerator$$anonfun$2.class[0m
 [0m[[0mdebug[0m] [0m	TweetGenerator$$anonfun$main$1.class[0m
 [0m[[0mdebug[0m] [0m	  /Users/Phrida/IdeaProjects/Masterprosjekt/target/scala-2.11/classes/TweetGenerator$$anonfun$main$1.class[0m
-[0m[[0mdebug[0m] [0m	TweetGenerator$$anonfun$5$$anonfun$6.class[0m
-[0m[[0mdebug[0m] [0m	  /Users/Phrida/IdeaProjects/Masterprosjekt/target/scala-2.11/classes/TweetGenerator$$anonfun$5$$anonfun$6.class[0m
 [0m[[0mdebug[0m] [0m	TweetGenerator$$anonfun$3.class[0m
 [0m[[0mdebug[0m] [0m	  /Users/Phrida/IdeaProjects/Masterprosjekt/target/scala-2.11/classes/TweetGenerator$$anonfun$3.class[0m
 [0m[[0mdebug[0m] [0m	TweetGenerator.class[0m
 [0m[[0mdebug[0m] [0m	  /Users/Phrida/IdeaProjects/Masterprosjekt/target/scala-2.11/classes/TweetGenerator.class[0m
 [0m[[0mdebug[0m] [0m	resources[0m
 [0m[[0mdebug[0m] [0m	  /Users/Phrida/IdeaProjects/Masterprosjekt/target/scala-2.11/classes/resources[0m
-[0m[[0mdebug[0m] [0m	TweetGenerator$$anonfun$5$$anonfun$7.class[0m
-[0m[[0mdebug[0m] [0m	  /Users/Phrida/IdeaProjects/Masterprosjekt/target/scala-2.11/classes/TweetGenerator$$anonfun$5$$anonfun$7.class[0m
 [0m[[0mdebug[0m] [0m	utils/SQLContextSingleton.class[0m
 [0m[[0mdebug[0m] [0m	  /Users/Phrida/IdeaProjects/Masterprosjekt/target/scala-2.11/classes/utils/SQLContextSingleton.class[0m
 [0m[[0mdebug[0m] [0m	resources/StopWord_Corpus.txt[0m
@@ -38,4 +32,6 @@
 [0m[[0mdebug[0m] [0m	  /Users/Phrida/IdeaProjects/Masterprosjekt/target/scala-2.11/classes/utils/SQLContextSingleton$.class[0m
 [0m[[0mdebug[0m] [0m	TweetGenerator$$anonfun$main$1$$anonfun$apply$1.class[0m
 [0m[[0mdebug[0m] [0m	  /Users/Phrida/IdeaProjects/Masterprosjekt/target/scala-2.11/classes/TweetGenerator$$anonfun$main$1$$anonfun$apply$1.class[0m
+[0m[[0mdebug[0m] [0m	TweetGenerator$$anonfun$main$2.class[0m
+[0m[[0mdebug[0m] [0m	  /Users/Phrida/IdeaProjects/Masterprosjekt/target/scala-2.11/classes/TweetGenerator$$anonfun$main$2.class[0m
 [0m[[0minfo[0m] [0mDone packaging.[0m
