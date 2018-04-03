@@ -4,7 +4,7 @@
 		module="twittervisualizationproject$sources_2.11"
 		revision="1.0"
 		status="integration"
-		publication="20180402114820"
+		publication="20180403162214"
 	/>
 	<configurations>
 		<conf name="compile" visibility="public" description=""/>

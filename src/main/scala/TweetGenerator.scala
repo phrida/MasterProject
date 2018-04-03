@@ -110,7 +110,6 @@ object TweetGenerator extends Serializable {
 
     kafkaTweets.print()
 
-
     //val testArray = new ArrayBuffer[String]()
     //testArray.append("Obama")
 
