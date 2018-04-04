@@ -20,6 +20,7 @@ libraryDependencies += "com.databricks" %% "spark-csv" % "1.5.0"
 libraryDependencies += "org.apache.spark" % "spark-streaming-kafka_2.11" % "1.6.0"
 libraryDependencies += "org.apache.kafka" %% "kafka" % "1.0.1"
 libraryDependencies += "org.apache.kafka" % "kafka-clients" % "1.0.1"
+libraryDependencies += "org.apache.spark" % "spark-streaming-kafka-0-10_2.11" % "2.3.0"
 libraryDependencies += "org.scalaj" %% "scalaj-http" % "2.3.0"
 libraryDependencies += "net.liftweb" %% "lift-json" % "3.2.0"
 
