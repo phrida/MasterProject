@@ -4,7 +4,7 @@
 		module="twittervisualizationproject_2.11"
 		revision="1.0"
 		status="integration"
-		publication="20180404112032"
+		publication="20180405150653"
 	>
 		<description>
 		TwitterVisualizationProject
@@ -44,6 +44,8 @@
 		<dependency org="joda-time" name="joda-time" rev="2.9.9" conf="compile->default(compile)"/>
 		<dependency org="org.twitter4j" name="twitter4j-core" rev="4.0.4" conf="compile->default(compile)"/>
 		<dependency org="org.twitter4j" name="twitter4j-stream" rev="4.0.4" conf="compile->default(compile)"/>
+		<dependency org="org.elasticsearch" name="elasticsearch" rev="6.2.1" conf="compile->default(compile)"/>
+		<dependency org="org.elasticsearch" name="elasticsearch-spark-20_2.11" rev="6.2.1" conf="compile->default(compile)"/>
 		<dependency org="org.json" name="json" rev="20170516" conf="compile->default(compile)"/>
 		<dependency org="com.typesafe" name="config" rev="1.3.2" conf="compile->default(compile)"/>
 		<dependency org="com.databricks" name="spark-csv_2.11" rev="1.5.0" conf="compile->default(compile)"/>
