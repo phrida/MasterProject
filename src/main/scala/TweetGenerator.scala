@@ -7,6 +7,7 @@ import org.apache.spark.{SparkConf, SparkContext}
 import org.apache.spark.streaming.kafka.{HasOffsetRanges, KafkaUtils}
 import org.apache.spark.streaming.twitter.TwitterUtils
 import org.apache.spark.streaming.{Minutes, Seconds, StreamingContext}
+import org.elasticsearch.spark.rdd.EsSpark
 
 import scala.collection.mutable.{ArrayBuffer, ListBuffer}
 import scalaj.http.{Http, HttpResponse}
@@ -74,22 +75,49 @@ object TweetGenerator extends Serializable {
 
     //filteredTweets.print()
 
+    val tweetMap = filteredTweets.map(json => {
+      val status = TwitterObjectFactory.createStatus(json)
+      val hashtags = status.getHashtagEntities().map(_.getText())
+      val formatter = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss")
+      //val sentiment = predictSentiment(status)
+      //val translatedSentiment = translateSentiment(sentiment)
 
 
+      HashMap(
+        "userID" -> status.getUser.getId(),
+        "userScreenName" -> status.getUser.getScreenName(),
+        "userName" -> status.getUser.getName(),
+        "userDescription" -> status.getUser.getDescription(),
+        "message" -> status.getText(),
+        "messageLength" -> status.getText.length(),
+        "hashtags" -> hashtags.mkString(" "),
+        "createdAt" -> formatter.format(status.getCreatedAt.getTime()),
+        "friendsCount" -> status.getUser.getFriendsCount(),
+        "followersCount" -> status.getUser.getFollowersCount(),
+        "coordinates" -> Option(status.getGeoLocation).map(geo => {s"${geo.getLatitude},${geo.getLongitude}"}),
+        "placeCountry" -> Option(status.getPlace).map(place => {s"${place.getCountry}"}),
+        "userLanguage" -> status.getUser.getLang,
+        "statusLanguage" -> status.getLang
+        //"sentiment" -> translatedSentiment
+      )
+    })
+
+    tweetMap.print()
+
+    tweetMap.foreachRDD(tweet => EsSpark.saveToEs(tweet, "visualization/tweets"))
+
+
+/*
     filteredTweets.foreachRDD(rdd => {
       rdd.foreachPartition(partitionOfRecords => {
         //println("Status: " + partitionOfRecords.getClass)
         while (partitionOfRecords.hasNext) {
           val tweet = partitionOfRecords.next()
-          println("TweetOriginal: " + tweet.getClass)
-          val changedTweet = tweet.replace("retweetedStatus", "retweeted_status")
-          println("Changed Tweet" + changedTweet)
+          //println("TweetOriginal: " + tweet)
 
-          val status = TwitterObjectFactory.createStatus(changedTweet)
-          println("TweetStatus: " + status)
+          val status = TwitterObjectFactory.createStatus(tweet)
+          //println("TweetStatus: " + status)
 
-
-          /*
 
           val hashtags = status.getHashtagEntities().map(_.getText)
           val formatter = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss")
@@ -102,7 +130,7 @@ object TweetGenerator extends Serializable {
             "message" -> status.getText(),
             "messageLength" -> status.getText.length(),
             "hashtags" -> hashtags.mkString(" "),
-            //"createdAt" -> formatter.format(status.getCreatedAt.getTime()),
+            "createdAt" -> formatter.format(status.getCreatedAt.getTime()),
             "friendsCount" -> status.getUser.getFriendsCount(),
             "followersCount" -> status.getUser.getFollowersCount(),
             "coordinates" -> Option(status.getGeoLocation).map(geo => {s"${geo.getLatitude},${geo.getLongitude}"}),
@@ -110,69 +138,15 @@ object TweetGenerator extends Serializable {
             "userLanguage" -> status.getUser.getLang,
             "statusLanguage" -> status.getLang
           )
-          println("TweetMap: " + tweetMap)*/
+          println("TweetMap: " + tweetMap)
         }
 
       })
-    })
-
-
-
-
-
-    //val filteredTweets = tweets.filter(_.contains(readFromFile().toList.head))
-
-    //filteredTweets.print()
-
-    //val tweetStatus: Status = TwitterObjectFactory.createStatus(filteredTweets.toString)
-
-    //println("User: "+ tweetStatus.getUser)
-
-    /*
-    val tweetMap = filteredTweets.map(status => {
-
-      val hashtags = status.getHashtagEntities().map(_.getText)
-      val formatter = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss")
-
-      HashMap(
-        //"userID" -> status.getUser.getId(),
-        //"userScreenName" -> status.getUser.getScreenName(),
-        "userName" -> status.getUser.getName(),
-        //"userDescription" -> status.getUser.getDescription(),
-        "message" -> status.getText(),
-        //"messageLength" -> status.getText.length(),
-        "hashtags" -> hashtags.mkString(" ")
-        //"createdAt" -> formatter.format(status.getCreatedAt.getTime()),
-        //"friendsCount" -> status.getUser.getFriendsCount(),
-        //"followersCount" -> status.getUser.getFollowersCount(),
-        //"coordinates" -> Option(status.getGeoLocation).map(geo => {s"${geo.getLatitude},${geo.getLongitude}"}),
-        //"placeCountry" -> Option(status.getPlace).map(place => {s"${place.getCountry}"}),
-        //"userLanguage" -> status.getUser.getLang,
-        //"statusLanguage" -> status.getLang
-      )
-    })
-
-    tweetMap.print()*/
-
-
-
-
+    })*/
 
     //filteredTweets.foreachRDD { tweet => EsSpark.saveToEs(tweet, "visualization/tweets")}
     //tweetMap.foreachRDD{ tweet => EsSpark.saveToEs(tweet, "visualization/tweets")
     //filteredTweets.print()
-
-
-
-
-
-    /*
-        if (readFromFile().toList.nonEmpty) {
-          val filter = readFromFile().toList.head
-          println("Filter: " + filter)
-          val filterTweets = tweets.filter(_.contains(filter))
-          filterTweets.print()
-        }*/
 
 
     ssc.get.start()

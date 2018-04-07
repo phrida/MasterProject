@@ -19,14 +19,17 @@ name hashing:
 1 items
 0 -> true
 products:
-15 items
+18 items
 /Users/Phrida/IdeaProjects/Masterprosjekt/src/main/scala/TweetGenerator.scala -> /Users/Phrida/IdeaProjects/Masterprosjekt/target/scala-2.11/classes/TweetGenerator$$anonfun$1.class
 /Users/Phrida/IdeaProjects/Masterprosjekt/src/main/scala/TweetGenerator.scala -> /Users/Phrida/IdeaProjects/Masterprosjekt/target/scala-2.11/classes/TweetGenerator$$anonfun$2.class
 /Users/Phrida/IdeaProjects/Masterprosjekt/src/main/scala/TweetGenerator.scala -> /Users/Phrida/IdeaProjects/Masterprosjekt/target/scala-2.11/classes/TweetGenerator$$anonfun$3.class
 /Users/Phrida/IdeaProjects/Masterprosjekt/src/main/scala/TweetGenerator.scala -> /Users/Phrida/IdeaProjects/Masterprosjekt/target/scala-2.11/classes/TweetGenerator$$anonfun$4.class
+/Users/Phrida/IdeaProjects/Masterprosjekt/src/main/scala/TweetGenerator.scala -> /Users/Phrida/IdeaProjects/Masterprosjekt/target/scala-2.11/classes/TweetGenerator$$anonfun$5$$anonfun$6.class
+/Users/Phrida/IdeaProjects/Masterprosjekt/src/main/scala/TweetGenerator.scala -> /Users/Phrida/IdeaProjects/Masterprosjekt/target/scala-2.11/classes/TweetGenerator$$anonfun$5$$anonfun$apply$2.class
+/Users/Phrida/IdeaProjects/Masterprosjekt/src/main/scala/TweetGenerator.scala -> /Users/Phrida/IdeaProjects/Masterprosjekt/target/scala-2.11/classes/TweetGenerator$$anonfun$5$$anonfun$apply$3.class
+/Users/Phrida/IdeaProjects/Masterprosjekt/src/main/scala/TweetGenerator.scala -> /Users/Phrida/IdeaProjects/Masterprosjekt/target/scala-2.11/classes/TweetGenerator$$anonfun$5.class
 /Users/Phrida/IdeaProjects/Masterprosjekt/src/main/scala/TweetGenerator.scala -> /Users/Phrida/IdeaProjects/Masterprosjekt/target/scala-2.11/classes/TweetGenerator$$anonfun$main$1$$anonfun$apply$1.class
 /Users/Phrida/IdeaProjects/Masterprosjekt/src/main/scala/TweetGenerator.scala -> /Users/Phrida/IdeaProjects/Masterprosjekt/target/scala-2.11/classes/TweetGenerator$$anonfun$main$1.class
-/Users/Phrida/IdeaProjects/Masterprosjekt/src/main/scala/TweetGenerator.scala -> /Users/Phrida/IdeaProjects/Masterprosjekt/target/scala-2.11/classes/TweetGenerator$$anonfun$main$2$$anonfun$apply$2.class
 /Users/Phrida/IdeaProjects/Masterprosjekt/src/main/scala/TweetGenerator.scala -> /Users/Phrida/IdeaProjects/Masterprosjekt/target/scala-2.11/classes/TweetGenerator$$anonfun$main$2.class
 /Users/Phrida/IdeaProjects/Masterprosjekt/src/main/scala/TweetGenerator.scala -> /Users/Phrida/IdeaProjects/Masterprosjekt/target/scala-2.11/classes/TweetGenerator$$anonfun$writeToFile$1.class
 /Users/Phrida/IdeaProjects/Masterprosjekt/src/main/scala/TweetGenerator.scala -> /Users/Phrida/IdeaProjects/Masterprosjekt/target/scala-2.11/classes/TweetGenerator$.class
@@ -36,13 +39,14 @@ products:
 /Users/Phrida/IdeaProjects/Masterprosjekt/src/main/scala/utils/SQLContextSingleton.scala -> /Users/Phrida/IdeaProjects/Masterprosjekt/target/scala-2.11/classes/utils/SQLContextSingleton$.class
 /Users/Phrida/IdeaProjects/Masterprosjekt/src/main/scala/utils/SQLContextSingleton.scala -> /Users/Phrida/IdeaProjects/Masterprosjekt/target/scala-2.11/classes/utils/SQLContextSingleton.class
 binary dependencies:
-14 items
+15 items
 /Users/Phrida/IdeaProjects/Masterprosjekt/src/main/scala/TweetGenerator.scala -> /Library/Java/JavaVirtualMachines/jdk1.8.0_101.jdk/Contents/Home/jre/lib/rt.jar
 /Users/Phrida/IdeaProjects/Masterprosjekt/src/main/scala/TweetGenerator.scala -> /Users/Phrida/.ivy2/cache/net.liftweb/lift-json_2.11/jars/lift-json_2.11-3.2.0.jar
 /Users/Phrida/IdeaProjects/Masterprosjekt/src/main/scala/TweetGenerator.scala -> /Users/Phrida/.ivy2/cache/org.apache.bahir/spark-streaming-twitter_2.11/jars/spark-streaming-twitter_2.11-2.2.0.jar
 /Users/Phrida/IdeaProjects/Masterprosjekt/src/main/scala/TweetGenerator.scala -> /Users/Phrida/.ivy2/cache/org.apache.spark/spark-core_2.11/jars/spark-core_2.11-2.2.0.jar
 /Users/Phrida/IdeaProjects/Masterprosjekt/src/main/scala/TweetGenerator.scala -> /Users/Phrida/.ivy2/cache/org.apache.spark/spark-streaming-kafka_2.11/jars/spark-streaming-kafka_2.11-1.6.0.jar
 /Users/Phrida/IdeaProjects/Masterprosjekt/src/main/scala/TweetGenerator.scala -> /Users/Phrida/.ivy2/cache/org.apache.spark/spark-streaming_2.11/jars/spark-streaming_2.11-2.2.0.jar
+/Users/Phrida/IdeaProjects/Masterprosjekt/src/main/scala/TweetGenerator.scala -> /Users/Phrida/.ivy2/cache/org.elasticsearch/elasticsearch-spark-20_2.11/jars/elasticsearch-spark-20_2.11-6.2.1.jar
 /Users/Phrida/IdeaProjects/Masterprosjekt/src/main/scala/TweetGenerator.scala -> /Users/Phrida/.ivy2/cache/org.scala-lang/scala-library/jars/scala-library-2.11.8.jar
 /Users/Phrida/IdeaProjects/Masterprosjekt/src/main/scala/TweetGenerator.scala -> /Users/Phrida/.ivy2/cache/org.scalaj/scalaj-http_2.11/jars/scalaj-http_2.11-2.3.0.jar
 /Users/Phrida/IdeaProjects/Masterprosjekt/src/main/scala/TweetGenerator.scala -> /Users/Phrida/.ivy2/cache/org.twitter4j/twitter4j-core/jars/twitter4j-core-4.0.4.jar
@@ -68,29 +72,31 @@ inheritance internal dependencies:
 inheritance external dependencies:
 0 items
 class names:
-15 items
+18 items
 /Users/Phrida/IdeaProjects/Masterprosjekt/src/main/scala/TweetGenerator.scala -> TweetGenerator
 /Users/Phrida/IdeaProjects/Masterprosjekt/src/main/scala/TweetGenerator.scala -> TweetGenerator$
 /Users/Phrida/IdeaProjects/Masterprosjekt/src/main/scala/TweetGenerator.scala -> TweetGenerator$$anonfun$1
 /Users/Phrida/IdeaProjects/Masterprosjekt/src/main/scala/TweetGenerator.scala -> TweetGenerator$$anonfun$2
 /Users/Phrida/IdeaProjects/Masterprosjekt/src/main/scala/TweetGenerator.scala -> TweetGenerator$$anonfun$3
 /Users/Phrida/IdeaProjects/Masterprosjekt/src/main/scala/TweetGenerator.scala -> TweetGenerator$$anonfun$4
+/Users/Phrida/IdeaProjects/Masterprosjekt/src/main/scala/TweetGenerator.scala -> TweetGenerator$$anonfun$5
+/Users/Phrida/IdeaProjects/Masterprosjekt/src/main/scala/TweetGenerator.scala -> TweetGenerator$$anonfun$5$$anonfun$6
+/Users/Phrida/IdeaProjects/Masterprosjekt/src/main/scala/TweetGenerator.scala -> TweetGenerator$$anonfun$5$$anonfun$apply$2
+/Users/Phrida/IdeaProjects/Masterprosjekt/src/main/scala/TweetGenerator.scala -> TweetGenerator$$anonfun$5$$anonfun$apply$3
 /Users/Phrida/IdeaProjects/Masterprosjekt/src/main/scala/TweetGenerator.scala -> TweetGenerator$$anonfun$main$1
 /Users/Phrida/IdeaProjects/Masterprosjekt/src/main/scala/TweetGenerator.scala -> TweetGenerator$$anonfun$main$1$$anonfun$apply$1
 /Users/Phrida/IdeaProjects/Masterprosjekt/src/main/scala/TweetGenerator.scala -> TweetGenerator$$anonfun$main$2
-/Users/Phrida/IdeaProjects/Masterprosjekt/src/main/scala/TweetGenerator.scala -> TweetGenerator$$anonfun$main$2$$anonfun$apply$2
 /Users/Phrida/IdeaProjects/Masterprosjekt/src/main/scala/TweetGenerator.scala -> TweetGenerator$$anonfun$writeToFile$1
 /Users/Phrida/IdeaProjects/Masterprosjekt/src/main/scala/utils/PropertiesLoader.scala -> utils.PropertiesLoader
 /Users/Phrida/IdeaProjects/Masterprosjekt/src/main/scala/utils/PropertiesLoader.scala -> utils.PropertiesLoader$
 /Users/Phrida/IdeaProjects/Masterprosjekt/src/main/scala/utils/SQLContextSingleton.scala -> utils.SQLContextSingleton
 /Users/Phrida/IdeaProjects/Masterprosjekt/src/main/scala/utils/SQLContextSingleton.scala -> utils.SQLContextSingleton$
 used names:
-201 items
+230 items
 /Users/Phrida/IdeaProjects/Masterprosjekt/src/main/scala/TweetGenerator.scala -> +
 /Users/Phrida/IdeaProjects/Masterprosjekt/src/main/scala/TweetGenerator.scala -> ->
 /Users/Phrida/IdeaProjects/Masterprosjekt/src/main/scala/TweetGenerator.scala -> <init>
 /Users/Phrida/IdeaProjects/Masterprosjekt/src/main/scala/TweetGenerator.scala -> <repeated>
-/Users/Phrida/IdeaProjects/Masterprosjekt/src/main/scala/TweetGenerator.scala -> ?0
 /Users/Phrida/IdeaProjects/Masterprosjekt/src/main/scala/TweetGenerator.scala -> A
 /Users/Phrida/IdeaProjects/Masterprosjekt/src/main/scala/TweetGenerator.scala -> Any
 /Users/Phrida/IdeaProjects/Masterprosjekt/src/main/scala/TweetGenerator.scala -> AnyRef
@@ -109,18 +115,22 @@ used names:
 /Users/Phrida/IdeaProjects/Masterprosjekt/src/main/scala/TweetGenerator.scala -> Col
 /Users/Phrida/IdeaProjects/Masterprosjekt/src/main/scala/TweetGenerator.scala -> Coll
 /Users/Phrida/IdeaProjects/Masterprosjekt/src/main/scala/TweetGenerator.scala -> DStream
+/Users/Phrida/IdeaProjects/Masterprosjekt/src/main/scala/TweetGenerator.scala -> Date
+/Users/Phrida/IdeaProjects/Masterprosjekt/src/main/scala/TweetGenerator.scala -> Double
 /Users/Phrida/IdeaProjects/Masterprosjekt/src/main/scala/TweetGenerator.scala -> Duration
+/Users/Phrida/IdeaProjects/Masterprosjekt/src/main/scala/TweetGenerator.scala -> EsSpark
 /Users/Phrida/IdeaProjects/Masterprosjekt/src/main/scala/TweetGenerator.scala -> File
 /Users/Phrida/IdeaProjects/Masterprosjekt/src/main/scala/TweetGenerator.scala -> Function1
+/Users/Phrida/IdeaProjects/Masterprosjekt/src/main/scala/TweetGenerator.scala -> GeoLocation
 /Users/Phrida/IdeaProjects/Masterprosjekt/src/main/scala/TweetGenerator.scala -> HasOffsetRanges
 /Users/Phrida/IdeaProjects/Masterprosjekt/src/main/scala/TweetGenerator.scala -> HashMap
+/Users/Phrida/IdeaProjects/Masterprosjekt/src/main/scala/TweetGenerator.scala -> HashtagEntity
 /Users/Phrida/IdeaProjects/Masterprosjekt/src/main/scala/TweetGenerator.scala -> Http
 /Users/Phrida/IdeaProjects/Masterprosjekt/src/main/scala/TweetGenerator.scala -> HttpRequest
 /Users/Phrida/IdeaProjects/Masterprosjekt/src/main/scala/TweetGenerator.scala -> HttpResponse
 /Users/Phrida/IdeaProjects/Masterprosjekt/src/main/scala/TweetGenerator.scala -> Int
 /Users/Phrida/IdeaProjects/Masterprosjekt/src/main/scala/TweetGenerator.scala -> Iterator
 /Users/Phrida/IdeaProjects/Masterprosjekt/src/main/scala/TweetGenerator.scala -> JObject
-/Users/Phrida/IdeaProjects/Masterprosjekt/src/main/scala/TweetGenerator.scala -> JSONObject
 /Users/Phrida/IdeaProjects/Masterprosjekt/src/main/scala/TweetGenerator.scala -> JValue
 /Users/Phrida/IdeaProjects/Masterprosjekt/src/main/scala/TweetGenerator.scala -> JsonAST
 /Users/Phrida/IdeaProjects/Masterprosjekt/src/main/scala/TweetGenerator.scala -> KafkaUtils
@@ -132,6 +142,7 @@ used names:
 /Users/Phrida/IdeaProjects/Masterprosjekt/src/main/scala/TweetGenerator.scala -> Nothing
 /Users/Phrida/IdeaProjects/Masterprosjekt/src/main/scala/TweetGenerator.scala -> Object
 /Users/Phrida/IdeaProjects/Masterprosjekt/src/main/scala/TweetGenerator.scala -> Option
+/Users/Phrida/IdeaProjects/Masterprosjekt/src/main/scala/TweetGenerator.scala -> Place
 /Users/Phrida/IdeaProjects/Masterprosjekt/src/main/scala/TweetGenerator.scala -> Predef
 /Users/Phrida/IdeaProjects/Masterprosjekt/src/main/scala/TweetGenerator.scala -> PrintWriter
 /Users/Phrida/IdeaProjects/Masterprosjekt/src/main/scala/TweetGenerator.scala -> RDD
@@ -148,8 +159,10 @@ used names:
 /Users/Phrida/IdeaProjects/Masterprosjekt/src/main/scala/TweetGenerator.scala -> StorageLevel
 /Users/Phrida/IdeaProjects/Masterprosjekt/src/main/scala/TweetGenerator.scala -> StreamingContext
 /Users/Phrida/IdeaProjects/Masterprosjekt/src/main/scala/TweetGenerator.scala -> String
+/Users/Phrida/IdeaProjects/Masterprosjekt/src/main/scala/TweetGenerator.scala -> StringContext
 /Users/Phrida/IdeaProjects/Masterprosjekt/src/main/scala/TweetGenerator.scala -> System
 /Users/Phrida/IdeaProjects/Masterprosjekt/src/main/scala/TweetGenerator.scala -> T
+/Users/Phrida/IdeaProjects/Masterprosjekt/src/main/scala/TweetGenerator.scala -> That
 /Users/Phrida/IdeaProjects/Masterprosjekt/src/main/scala/TweetGenerator.scala -> TraversableOnce
 /Users/Phrida/IdeaProjects/Masterprosjekt/src/main/scala/TweetGenerator.scala -> Tuple2
 /Users/Phrida/IdeaProjects/Masterprosjekt/src/main/scala/TweetGenerator.scala -> TweetGenerator
@@ -157,8 +170,11 @@ used names:
 /Users/Phrida/IdeaProjects/Masterprosjekt/src/main/scala/TweetGenerator.scala -> TwitterUtils
 /Users/Phrida/IdeaProjects/Masterprosjekt/src/main/scala/TweetGenerator.scala -> U
 /Users/Phrida/IdeaProjects/Masterprosjekt/src/main/scala/TweetGenerator.scala -> Unit
+/Users/Phrida/IdeaProjects/Masterprosjekt/src/main/scala/TweetGenerator.scala -> User
 /Users/Phrida/IdeaProjects/Masterprosjekt/src/main/scala/TweetGenerator.scala -> Values
 /Users/Phrida/IdeaProjects/Masterprosjekt/src/main/scala/TweetGenerator.scala -> \\
+/Users/Phrida/IdeaProjects/Masterprosjekt/src/main/scala/TweetGenerator.scala -> _$1
+/Users/Phrida/IdeaProjects/Masterprosjekt/src/main/scala/TweetGenerator.scala -> _$4
 /Users/Phrida/IdeaProjects/Masterprosjekt/src/main/scala/TweetGenerator.scala -> _$7
 /Users/Phrida/IdeaProjects/Masterprosjekt/src/main/scala/TweetGenerator.scala -> _2
 /Users/Phrida/IdeaProjects/Masterprosjekt/src/main/scala/TweetGenerator.scala -> apache
@@ -168,12 +184,12 @@ used names:
 /Users/Phrida/IdeaProjects/Masterprosjekt/src/main/scala/TweetGenerator.scala -> awaitTermination
 /Users/Phrida/IdeaProjects/Masterprosjekt/src/main/scala/TweetGenerator.scala -> body
 /Users/Phrida/IdeaProjects/Masterprosjekt/src/main/scala/TweetGenerator.scala -> canBuildFrom
-/Users/Phrida/IdeaProjects/Masterprosjekt/src/main/scala/TweetGenerator.scala -> changedTweet
 /Users/Phrida/IdeaProjects/Masterprosjekt/src/main/scala/TweetGenerator.scala -> close
 /Users/Phrida/IdeaProjects/Masterprosjekt/src/main/scala/TweetGenerator.scala -> collection
 /Users/Phrida/IdeaProjects/Masterprosjekt/src/main/scala/TweetGenerator.scala -> contains
 /Users/Phrida/IdeaProjects/Masterprosjekt/src/main/scala/TweetGenerator.scala -> createStatus
 /Users/Phrida/IdeaProjects/Masterprosjekt/src/main/scala/TweetGenerator.scala -> createStream
+/Users/Phrida/IdeaProjects/Masterprosjekt/src/main/scala/TweetGenerator.scala -> elasticsearch
 /Users/Phrida/IdeaProjects/Masterprosjekt/src/main/scala/TweetGenerator.scala -> empty
 /Users/Phrida/IdeaProjects/Masterprosjekt/src/main/scala/TweetGenerator.scala -> exists
 /Users/Phrida/IdeaProjects/Masterprosjekt/src/main/scala/TweetGenerator.scala -> fallbackSystemCodec
@@ -184,14 +200,32 @@ used names:
 /Users/Phrida/IdeaProjects/Masterprosjekt/src/main/scala/TweetGenerator.scala -> filteredTweets
 /Users/Phrida/IdeaProjects/Masterprosjekt/src/main/scala/TweetGenerator.scala -> flatMap
 /Users/Phrida/IdeaProjects/Masterprosjekt/src/main/scala/TweetGenerator.scala -> foreach
-/Users/Phrida/IdeaProjects/Masterprosjekt/src/main/scala/TweetGenerator.scala -> foreachPartition
 /Users/Phrida/IdeaProjects/Masterprosjekt/src/main/scala/TweetGenerator.scala -> foreachRDD
+/Users/Phrida/IdeaProjects/Masterprosjekt/src/main/scala/TweetGenerator.scala -> format
+/Users/Phrida/IdeaProjects/Masterprosjekt/src/main/scala/TweetGenerator.scala -> formatter
 /Users/Phrida/IdeaProjects/Masterprosjekt/src/main/scala/TweetGenerator.scala -> fromFile
+/Users/Phrida/IdeaProjects/Masterprosjekt/src/main/scala/TweetGenerator.scala -> geo
 /Users/Phrida/IdeaProjects/Masterprosjekt/src/main/scala/TweetGenerator.scala -> get
-/Users/Phrida/IdeaProjects/Masterprosjekt/src/main/scala/TweetGenerator.scala -> getClass
+/Users/Phrida/IdeaProjects/Masterprosjekt/src/main/scala/TweetGenerator.scala -> getCountry
+/Users/Phrida/IdeaProjects/Masterprosjekt/src/main/scala/TweetGenerator.scala -> getCreatedAt
+/Users/Phrida/IdeaProjects/Masterprosjekt/src/main/scala/TweetGenerator.scala -> getDescription
+/Users/Phrida/IdeaProjects/Masterprosjekt/src/main/scala/TweetGenerator.scala -> getFollowersCount
+/Users/Phrida/IdeaProjects/Masterprosjekt/src/main/scala/TweetGenerator.scala -> getFriendsCount
+/Users/Phrida/IdeaProjects/Masterprosjekt/src/main/scala/TweetGenerator.scala -> getGeoLocation
+/Users/Phrida/IdeaProjects/Masterprosjekt/src/main/scala/TweetGenerator.scala -> getHashtagEntities
+/Users/Phrida/IdeaProjects/Masterprosjekt/src/main/scala/TweetGenerator.scala -> getId
+/Users/Phrida/IdeaProjects/Masterprosjekt/src/main/scala/TweetGenerator.scala -> getLang
+/Users/Phrida/IdeaProjects/Masterprosjekt/src/main/scala/TweetGenerator.scala -> getLatitude
 /Users/Phrida/IdeaProjects/Masterprosjekt/src/main/scala/TweetGenerator.scala -> getLines
+/Users/Phrida/IdeaProjects/Masterprosjekt/src/main/scala/TweetGenerator.scala -> getLongitude
+/Users/Phrida/IdeaProjects/Masterprosjekt/src/main/scala/TweetGenerator.scala -> getName
+/Users/Phrida/IdeaProjects/Masterprosjekt/src/main/scala/TweetGenerator.scala -> getPlace
+/Users/Phrida/IdeaProjects/Masterprosjekt/src/main/scala/TweetGenerator.scala -> getScreenName
+/Users/Phrida/IdeaProjects/Masterprosjekt/src/main/scala/TweetGenerator.scala -> getText
+/Users/Phrida/IdeaProjects/Masterprosjekt/src/main/scala/TweetGenerator.scala -> getTime
+/Users/Phrida/IdeaProjects/Masterprosjekt/src/main/scala/TweetGenerator.scala -> getUser
 /Users/Phrida/IdeaProjects/Masterprosjekt/src/main/scala/TweetGenerator.scala -> group
-/Users/Phrida/IdeaProjects/Masterprosjekt/src/main/scala/TweetGenerator.scala -> hasNext
+/Users/Phrida/IdeaProjects/Masterprosjekt/src/main/scala/TweetGenerator.scala -> hashtags
 /Users/Phrida/IdeaProjects/Masterprosjekt/src/main/scala/TweetGenerator.scala -> head
 /Users/Phrida/IdeaProjects/Masterprosjekt/src/main/scala/TweetGenerator.scala -> http
 /Users/Phrida/IdeaProjects/Masterprosjekt/src/main/scala/TweetGenerator.scala -> immutable
@@ -202,26 +236,28 @@ used names:
 /Users/Phrida/IdeaProjects/Masterprosjekt/src/main/scala/TweetGenerator.scala -> kafka
 /Users/Phrida/IdeaProjects/Masterprosjekt/src/main/scala/TweetGenerator.scala -> keyword
 /Users/Phrida/IdeaProjects/Masterprosjekt/src/main/scala/TweetGenerator.scala -> lang
+/Users/Phrida/IdeaProjects/Masterprosjekt/src/main/scala/TweetGenerator.scala -> length
 /Users/Phrida/IdeaProjects/Masterprosjekt/src/main/scala/TweetGenerator.scala -> liftweb
 /Users/Phrida/IdeaProjects/Masterprosjekt/src/main/scala/TweetGenerator.scala -> list
 /Users/Phrida/IdeaProjects/Masterprosjekt/src/main/scala/TweetGenerator.scala -> listObject
 /Users/Phrida/IdeaProjects/Masterprosjekt/src/main/scala/TweetGenerator.scala -> map
 /Users/Phrida/IdeaProjects/Masterprosjekt/src/main/scala/TweetGenerator.scala -> materializeClassTag
+/Users/Phrida/IdeaProjects/Masterprosjekt/src/main/scala/TweetGenerator.scala -> mkString
 /Users/Phrida/IdeaProjects/Masterprosjekt/src/main/scala/TweetGenerator.scala -> mutable
 /Users/Phrida/IdeaProjects/Masterprosjekt/src/main/scala/TweetGenerator.scala -> net
-/Users/Phrida/IdeaProjects/Masterprosjekt/src/main/scala/TweetGenerator.scala -> next
 /Users/Phrida/IdeaProjects/Masterprosjekt/src/main/scala/TweetGenerator.scala -> org
 /Users/Phrida/IdeaProjects/Masterprosjekt/src/main/scala/TweetGenerator.scala -> package
 /Users/Phrida/IdeaProjects/Masterprosjekt/src/main/scala/TweetGenerator.scala -> params
 /Users/Phrida/IdeaProjects/Masterprosjekt/src/main/scala/TweetGenerator.scala -> parse
-/Users/Phrida/IdeaProjects/Masterprosjekt/src/main/scala/TweetGenerator.scala -> partitionOfRecords
+/Users/Phrida/IdeaProjects/Masterprosjekt/src/main/scala/TweetGenerator.scala -> place
 /Users/Phrida/IdeaProjects/Masterprosjekt/src/main/scala/TweetGenerator.scala -> print
 /Users/Phrida/IdeaProjects/Masterprosjekt/src/main/scala/TweetGenerator.scala -> println
 /Users/Phrida/IdeaProjects/Masterprosjekt/src/main/scala/TweetGenerator.scala -> rdd
 /Users/Phrida/IdeaProjects/Masterprosjekt/src/main/scala/TweetGenerator.scala -> readFromFile
 /Users/Phrida/IdeaProjects/Masterprosjekt/src/main/scala/TweetGenerator.scala -> refArrayOps
-/Users/Phrida/IdeaProjects/Masterprosjekt/src/main/scala/TweetGenerator.scala -> replace
 /Users/Phrida/IdeaProjects/Masterprosjekt/src/main/scala/TweetGenerator.scala -> response
+/Users/Phrida/IdeaProjects/Masterprosjekt/src/main/scala/TweetGenerator.scala -> s
+/Users/Phrida/IdeaProjects/Masterprosjekt/src/main/scala/TweetGenerator.scala -> saveToEs
 /Users/Phrida/IdeaProjects/Masterprosjekt/src/main/scala/TweetGenerator.scala -> scala
 /Users/Phrida/IdeaProjects/Masterprosjekt/src/main/scala/TweetGenerator.scala -> scalaj
 /Users/Phrida/IdeaProjects/Masterprosjekt/src/main/scala/TweetGenerator.scala -> set
@@ -242,10 +278,10 @@ used names:
 /Users/Phrida/IdeaProjects/Masterprosjekt/src/main/scala/TweetGenerator.scala -> toList
 /Users/Phrida/IdeaProjects/Masterprosjekt/src/main/scala/TweetGenerator.scala -> toString
 /Users/Phrida/IdeaProjects/Masterprosjekt/src/main/scala/TweetGenerator.scala -> tweet
+/Users/Phrida/IdeaProjects/Masterprosjekt/src/main/scala/TweetGenerator.scala -> tweetMap
 /Users/Phrida/IdeaProjects/Masterprosjekt/src/main/scala/TweetGenerator.scala -> tweets
 /Users/Phrida/IdeaProjects/Masterprosjekt/src/main/scala/TweetGenerator.scala -> twitter
 /Users/Phrida/IdeaProjects/Masterprosjekt/src/main/scala/TweetGenerator.scala -> twitter4j
-/Users/Phrida/IdeaProjects/Masterprosjekt/src/main/scala/TweetGenerator.scala -> while$1
 /Users/Phrida/IdeaProjects/Masterprosjekt/src/main/scala/TweetGenerator.scala -> word
 /Users/Phrida/IdeaProjects/Masterprosjekt/src/main/scala/TweetGenerator.scala -> words
 /Users/Phrida/IdeaProjects/Masterprosjekt/src/main/scala/TweetGenerator.scala -> writeToFile
@@ -288,29 +324,32 @@ used names:
 /Users/Phrida/IdeaProjects/Masterprosjekt/src/main/scala/utils/SQLContextSingleton.scala -> synchronized
 /Users/Phrida/IdeaProjects/Masterprosjekt/src/main/scala/utils/SQLContextSingleton.scala -> utils
 product stamps:
-15 items
-/Users/Phrida/IdeaProjects/Masterprosjekt/target/scala-2.11/classes/TweetGenerator$$anonfun$1.class -> lastModified(1523116917000)
-/Users/Phrida/IdeaProjects/Masterprosjekt/target/scala-2.11/classes/TweetGenerator$$anonfun$2.class -> lastModified(1523116917000)
-/Users/Phrida/IdeaProjects/Masterprosjekt/target/scala-2.11/classes/TweetGenerator$$anonfun$3.class -> lastModified(1523116917000)
-/Users/Phrida/IdeaProjects/Masterprosjekt/target/scala-2.11/classes/TweetGenerator$$anonfun$4.class -> lastModified(1523116917000)
-/Users/Phrida/IdeaProjects/Masterprosjekt/target/scala-2.11/classes/TweetGenerator$$anonfun$main$1$$anonfun$apply$1.class -> lastModified(1523116917000)
-/Users/Phrida/IdeaProjects/Masterprosjekt/target/scala-2.11/classes/TweetGenerator$$anonfun$main$1.class -> lastModified(1523116917000)
-/Users/Phrida/IdeaProjects/Masterprosjekt/target/scala-2.11/classes/TweetGenerator$$anonfun$main$2$$anonfun$apply$2.class -> lastModified(1523116917000)
-/Users/Phrida/IdeaProjects/Masterprosjekt/target/scala-2.11/classes/TweetGenerator$$anonfun$main$2.class -> lastModified(1523116917000)
-/Users/Phrida/IdeaProjects/Masterprosjekt/target/scala-2.11/classes/TweetGenerator$$anonfun$writeToFile$1.class -> lastModified(1523116917000)
-/Users/Phrida/IdeaProjects/Masterprosjekt/target/scala-2.11/classes/TweetGenerator$.class -> lastModified(1523116917000)
-/Users/Phrida/IdeaProjects/Masterprosjekt/target/scala-2.11/classes/TweetGenerator.class -> lastModified(1523116917000)
+18 items
+/Users/Phrida/IdeaProjects/Masterprosjekt/target/scala-2.11/classes/TweetGenerator$$anonfun$1.class -> lastModified(1523130828000)
+/Users/Phrida/IdeaProjects/Masterprosjekt/target/scala-2.11/classes/TweetGenerator$$anonfun$2.class -> lastModified(1523130828000)
+/Users/Phrida/IdeaProjects/Masterprosjekt/target/scala-2.11/classes/TweetGenerator$$anonfun$3.class -> lastModified(1523130828000)
+/Users/Phrida/IdeaProjects/Masterprosjekt/target/scala-2.11/classes/TweetGenerator$$anonfun$4.class -> lastModified(1523130828000)
+/Users/Phrida/IdeaProjects/Masterprosjekt/target/scala-2.11/classes/TweetGenerator$$anonfun$5$$anonfun$6.class -> lastModified(1523130828000)
+/Users/Phrida/IdeaProjects/Masterprosjekt/target/scala-2.11/classes/TweetGenerator$$anonfun$5$$anonfun$apply$2.class -> lastModified(1523130828000)
+/Users/Phrida/IdeaProjects/Masterprosjekt/target/scala-2.11/classes/TweetGenerator$$anonfun$5$$anonfun$apply$3.class -> lastModified(1523130828000)
+/Users/Phrida/IdeaProjects/Masterprosjekt/target/scala-2.11/classes/TweetGenerator$$anonfun$5.class -> lastModified(1523130828000)
+/Users/Phrida/IdeaProjects/Masterprosjekt/target/scala-2.11/classes/TweetGenerator$$anonfun$main$1$$anonfun$apply$1.class -> lastModified(1523130828000)
+/Users/Phrida/IdeaProjects/Masterprosjekt/target/scala-2.11/classes/TweetGenerator$$anonfun$main$1.class -> lastModified(1523130828000)
+/Users/Phrida/IdeaProjects/Masterprosjekt/target/scala-2.11/classes/TweetGenerator$$anonfun$main$2.class -> lastModified(1523130828000)
+/Users/Phrida/IdeaProjects/Masterprosjekt/target/scala-2.11/classes/TweetGenerator$$anonfun$writeToFile$1.class -> lastModified(1523130828000)
+/Users/Phrida/IdeaProjects/Masterprosjekt/target/scala-2.11/classes/TweetGenerator$.class -> lastModified(1523130828000)
+/Users/Phrida/IdeaProjects/Masterprosjekt/target/scala-2.11/classes/TweetGenerator.class -> lastModified(1523130828000)
 /Users/Phrida/IdeaProjects/Masterprosjekt/target/scala-2.11/classes/utils/PropertiesLoader$.class -> lastModified(1522933815000)
 /Users/Phrida/IdeaProjects/Masterprosjekt/target/scala-2.11/classes/utils/PropertiesLoader.class -> lastModified(1522933815000)
 /Users/Phrida/IdeaProjects/Masterprosjekt/target/scala-2.11/classes/utils/SQLContextSingleton$.class -> lastModified(1522933815000)
 /Users/Phrida/IdeaProjects/Masterprosjekt/target/scala-2.11/classes/utils/SQLContextSingleton.class -> lastModified(1522933815000)
 source stamps:
 3 items
-/Users/Phrida/IdeaProjects/Masterprosjekt/src/main/scala/TweetGenerator.scala -> hash(dd3f22cd7a3571f7e3ed10c514494979842389a5)
+/Users/Phrida/IdeaProjects/Masterprosjekt/src/main/scala/TweetGenerator.scala -> hash(6ed6b49733dc0609a04abebe30ed0530ed6aae02)
 /Users/Phrida/IdeaProjects/Masterprosjekt/src/main/scala/utils/PropertiesLoader.scala -> hash(4a0e4debc643593ae09f10f231c9e11c51c4e359)
 /Users/Phrida/IdeaProjects/Masterprosjekt/src/main/scala/utils/SQLContextSingleton.scala -> hash(5bd3e54d92435e0a6996bc991eaff4a75d538869)
 binary stamps:
-10 items
+11 items
 /Library/Java/JavaVirtualMachines/jdk1.8.0_101.jdk/Contents/Home/jre/lib/rt.jar -> lastModified(1466589303000)
 /Users/Phrida/.ivy2/cache/net.liftweb/lift-json_2.11/jars/lift-json_2.11-3.2.0.jar -> lastModified(1517071726000)
 /Users/Phrida/.ivy2/cache/org.apache.bahir/spark-streaming-twitter_2.11/jars/spark-streaming-twitter_2.11-2.2.0.jar -> lastModified(1502945990000)
@@ -318,25 +357,27 @@ binary stamps:
 /Users/Phrida/.ivy2/cache/org.apache.spark/spark-sql_2.11/jars/spark-sql_2.11-2.2.0.jar -> lastModified(1498869654000)
 /Users/Phrida/.ivy2/cache/org.apache.spark/spark-streaming-kafka_2.11/jars/spark-streaming-kafka_2.11-1.6.0.jar -> lastModified(1450755445000)
 /Users/Phrida/.ivy2/cache/org.apache.spark/spark-streaming_2.11/jars/spark-streaming_2.11-2.2.0.jar -> lastModified(1498869296000)
+/Users/Phrida/.ivy2/cache/org.elasticsearch/elasticsearch-spark-20_2.11/jars/elasticsearch-spark-20_2.11-6.2.1.jar -> lastModified(1518040004000)
 /Users/Phrida/.ivy2/cache/org.scala-lang/scala-library/jars/scala-library-2.11.8.jar -> lastModified(1457105192000)
 /Users/Phrida/.ivy2/cache/org.scalaj/scalaj-http_2.11/jars/scalaj-http_2.11-2.3.0.jar -> lastModified(1459630353000)
 /Users/Phrida/.ivy2/cache/org.twitter4j/twitter4j-core/jars/twitter4j-core-4.0.4.jar -> lastModified(1435055216000)
 class names:
-10 items
+11 items
 /Library/Java/JavaVirtualMachines/jdk1.8.0_101.jdk/Contents/Home/jre/lib/rt.jar -> java.io.Serializable
-/Users/Phrida/.ivy2/cache/net.liftweb/lift-json_2.11/jars/lift-json_2.11-3.2.0.jar -> net.liftweb.json.package$
-/Users/Phrida/.ivy2/cache/org.apache.bahir/spark-streaming-twitter_2.11/jars/spark-streaming-twitter_2.11-2.2.0.jar -> org.apache.spark.streaming.twitter.TwitterUtils
-/Users/Phrida/.ivy2/cache/org.apache.spark/spark-core_2.11/jars/spark-core_2.11-2.2.0.jar -> org.apache.spark.SparkContext$
+/Users/Phrida/.ivy2/cache/net.liftweb/lift-json_2.11/jars/lift-json_2.11-3.2.0.jar -> net.liftweb.json.JsonAST$
+/Users/Phrida/.ivy2/cache/org.apache.bahir/spark-streaming-twitter_2.11/jars/spark-streaming-twitter_2.11-2.2.0.jar -> org.apache.spark.streaming.twitter.TwitterUtils$
+/Users/Phrida/.ivy2/cache/org.apache.spark/spark-core_2.11/jars/spark-core_2.11-2.2.0.jar -> org.apache.spark.SparkConf$
 /Users/Phrida/.ivy2/cache/org.apache.spark/spark-sql_2.11/jars/spark-sql_2.11-2.2.0.jar -> org.apache.spark.sql.SQLContext
-/Users/Phrida/.ivy2/cache/org.apache.spark/spark-streaming-kafka_2.11/jars/spark-streaming-kafka_2.11-1.6.0.jar -> org.apache.spark.streaming.kafka.KafkaUtils
-/Users/Phrida/.ivy2/cache/org.apache.spark/spark-streaming_2.11/jars/spark-streaming_2.11-2.2.0.jar -> org.apache.spark.streaming.Seconds$
-/Users/Phrida/.ivy2/cache/org.scala-lang/scala-library/jars/scala-library-2.11.8.jar -> scala.collection.immutable.HashMap$
-/Users/Phrida/.ivy2/cache/org.scalaj/scalaj-http_2.11/jars/scalaj-http_2.11-2.3.0.jar -> scalaj.http.HttpRequest
-/Users/Phrida/.ivy2/cache/org.twitter4j/twitter4j-core/jars/twitter4j-core-4.0.4.jar -> twitter4j.TwitterObjectFactory
+/Users/Phrida/.ivy2/cache/org.apache.spark/spark-streaming-kafka_2.11/jars/spark-streaming-kafka_2.11-1.6.0.jar -> org.apache.spark.streaming.kafka.HasOffsetRanges
+/Users/Phrida/.ivy2/cache/org.apache.spark/spark-streaming_2.11/jars/spark-streaming_2.11-2.2.0.jar -> org.apache.spark.streaming.StreamingContext$
+/Users/Phrida/.ivy2/cache/org.elasticsearch/elasticsearch-spark-20_2.11/jars/elasticsearch-spark-20_2.11-6.2.1.jar -> org.elasticsearch.spark.rdd.EsSpark$
+/Users/Phrida/.ivy2/cache/org.scala-lang/scala-library/jars/scala-library-2.11.8.jar -> scala.package$
+/Users/Phrida/.ivy2/cache/org.scalaj/scalaj-http_2.11/jars/scalaj-http_2.11-2.3.0.jar -> scalaj.http.HttpResponse$
+/Users/Phrida/.ivy2/cache/org.twitter4j/twitter4j-core/jars/twitter4j-core-4.0.4.jar -> twitter4j.Status
 internal apis:
 3 items
 /Users/Phrida/IdeaProjects/Masterprosjekt/src/main/scala/TweetGenerator.scala -> 
-rO0ABXNyABB4c2J0aS5hcGkuU291cmNlSjH5SdlLSkQCAAdJAAdhcGlIYXNoWgAIaGFzTWFjcm9aABBoYXNQYWNrYWdlT2JqZWN0TAAYX2ludGVybmFsT25seV9uYW1lSGFzaGVzdAAkTHhzYnRpL2FwaS9faW50ZXJuYWxPbmx5X05hbWVIYXNoZXM7TAADYXBpdAAVTHhzYnRpL2FwaS9Tb3VyY2VBUEk7TAALY29tcGlsYXRpb250ABdMeHNidGkvYXBpL0NvbXBpbGF0aW9uO1sABGhhc2h0AAJbQnhwEJueHgAAc3IAInhzYnRpLmFwaS5faW50ZXJuYWxPbmx5X05hbWVIYXNoZXNU2r6Z+tTsTAIAAlsAD2ltcGxpY2l0TWVtYmVyc3QAI1tMeHNidGkvYXBpL19pbnRlcm5hbE9ubHlfTmFtZUhhc2g7WwAOcmVndWxhck1lbWJlcnNxAH4AB3hwdXIAI1tMeHNidGkuYXBpLl9pbnRlcm5hbE9ubHlfTmFtZUhhc2g7SVqAtt2Wi/QCAAB4cAAAAAB1cQB+AAkAAAAYc3IAIHhzYnRpLmFwaS5faW50ZXJuYWxPbmx5X05hbWVIYXNoWw71InY4V88CAAJJAARoYXNoTAAEbmFtZXQAEkxqYXZhL2xhbmcvU3RyaW5nO3hwSUk16nQABm5vdGlmeXNxAH4ADOnjEcJ0AAR3YWl0c3EAfgAMGy7I5HQADlR3ZWV0R2VuZXJhdG9yc3EAfgAMz6MxUXQADSRhc0luc3RhbmNlT2ZzcQB+AAxo8RqvdAAMcmVhZEZyb21GaWxlc3EAfgAMwP69jXQABmVxdWFsc3NxAH4ADLHGI050AAxhc0luc3RhbmNlT2ZzcQB+AAw8G5VvdAAMc3luY2hyb25pemVkc3EAfgAMbTD7zHQADSRpc0luc3RhbmNlT2ZzcQB+AAzglrZ0dAAEbWFpbnNxAH4ADOQgi650AAlub3RpZnlBbGxzcQB+AAwkqDFpdAAMaXNJbnN0YW5jZU9mc3EAfgAMeBgmFHQAAj09c3EAfgAMNtV5inQABWNsb25lc3EAfgAMtao1W3QACHRvU3RyaW5nc3EAfgAMCEz773QAAiE9c3EAfgAMD7BdknQACGdldENsYXNzc3EAfgAMgwuaAnQAC3dyaXRlVG9GaWxlc3EAfgAMoAgf1HQAAm5lc3EAfgAMj1XS1HQAAmVxc3EAfgAMhV7S5HQADWdldEdvb2dsZUxpc3RzcQB+AAyAX1ZZdAACIyNzcQB+AAx/XA6NdAAIZmluYWxpemVzcQB+AAyt1a4DdAAIaGFzaENvZGVzcgATeHNidGkuYXBpLlNvdXJjZUFQSblep/kpIzikAgACWwALZGVmaW5pdGlvbnN0ABdbTHhzYnRpL2FwaS9EZWZpbml0aW9uO1sACHBhY2thZ2VzdAAUW0x4c2J0aS9hcGkvUGFja2FnZTt4cHVyABdbTHhzYnRpLmFwaS5EZWZpbml0aW9uO4jJXOe0414OAgAAeHAAAAABc3IAE3hzYnRpLmFwaS5DbGFzc0xpa2WDNByh37CXbAIABEwADmRlZmluaXRpb25UeXBldAAaTHhzYnRpL2FwaS9EZWZpbml0aW9uVHlwZTtbABBzYXZlZEFubm90YXRpb25zdAATW0xqYXZhL2xhbmcvU3RyaW5nO0wACHNlbGZUeXBldAAQTHhzYnRpL2FwaS9MYXp5O0wACXN0cnVjdHVyZXEAfgBHeHIAIXhzYnRpLmFwaS5QYXJhbWV0ZXJpemVkRGVmaW5pdGlvbvkRbrHVUDziAgABWwAOdHlwZVBhcmFtZXRlcnN0ABpbTHhzYnRpL2FwaS9UeXBlUGFyYW1ldGVyO3hyABR4c2J0aS5hcGkuRGVmaW5pdGlvbocqG+hxQuNGAgAETAAGYWNjZXNzdAASTHhzYnRpL2FwaS9BY2Nlc3M7WwALYW5ub3RhdGlvbnN0ABdbTHhzYnRpL2FwaS9Bbm5vdGF0aW9uO0wACW1vZGlmaWVyc3QAFUx4c2J0aS9hcGkvTW9kaWZpZXJzO0wABG5hbWVxAH4ADXhwc3IAEHhzYnRpLmFwaS5QdWJsaWO6WD2ubC1gQgIAAHhyABB4c2J0aS5hcGkuQWNjZXNz3WKa+B1jMUgCAAB4cHVyABdbTHhzYnRpLmFwaS5Bbm5vdGF0aW9uO+uX6xkQ9o1IAgAAeHAAAAAAc3IAE3hzYnRpLmFwaS5Nb2RpZmllcnOX52HcEyZ7swIAAUIABWZsYWdzeHAAcQB+ABN1cgAaW0x4c2J0aS5hcGkuVHlwZVBhcmFtZXRlcjvZbSYPKJ3ytgIAAHhwAAAAAH5yABh4c2J0aS5hcGkuRGVmaW5pdGlvblR5cGUAAAAAAAAAABIAAHhyAA5qYXZhLmxhbmcuRW51bQAAAAAAAAAAEgAAeHB0AAZNb2R1bGV1cgATW0xqYXZhLmxhbmcuU3RyaW5nO63SVufpHXtHAgAAeHAAAAAAc3IAIXhzYnRpLmFwaS5BYnN0cmFjdExhenkkU3RyaWN0TGF6eQ1mHGspFiq4AgABTAAFdmFsdWV0ABJMamF2YS9sYW5nL09iamVjdDt4cHNyABN4c2J0aS5hcGkuRW1wdHlUeXBlvP2eRkk7iSQCAAB4cgAUeHNidGkuYXBpLlNpbXBsZVR5cGVyeGKIISO/QAIAAHhyAA54c2J0aS5hcGkuVHlwZT9q2SEWSarKAgAAeHBzcQB+AF5zcgATeHNidGkuYXBpLlN0cnVjdHVyZamq+YCTb9gAAgADTAAIZGVjbGFyZWRxAH4AR0wACWluaGVyaXRlZHEAfgBHTAAHcGFyZW50c3EAfgBHeHEAfgBjc3EAfgBedXEAfgBCAAAAAXNyAA14c2J0aS5hcGkuRGVmUr6f4ny0NmkCAAJMAApyZXR1cm5UeXBldAAQTHhzYnRpL2FwaS9UeXBlO1sAD3ZhbHVlUGFyYW1ldGVyc3QAGltMeHNidGkvYXBpL1BhcmFtZXRlckxpc3Q7eHEAfgBIcQB+AFF1cQB+AFIAAAAAc3EAfgBUAHEAfgAhdXEAfgBWAAAAAHNyABR4c2J0aS5hcGkuUHJvamVjdGlvbvPSjVTpRaQtAgACTAACaWRxAH4ADUwABnByZWZpeHQAFkx4c2J0aS9hcGkvU2ltcGxlVHlwZTt4cQB+AGJ0AARVbml0c3IAE3hzYnRpLmFwaS5TaW5nbGV0b278p1/4z1bkRgIAAUwABHBhdGh0ABBMeHNidGkvYXBpL1BhdGg7eHEAfgBic3IADnhzYnRpLmFwaS5QYXRomz1cCM6lJ4QCAAFbAApjb21wb25lbnRzdAAaW0x4c2J0aS9hcGkvUGF0aENvbXBvbmVudDt4cHVyABpbTHhzYnRpLmFwaS5QYXRoQ29tcG9uZW50O0PaCXQtZxZ0AgAAeHAAAAACc3IADHhzYnRpLmFwaS5JZJgybIs3U8RAAgABTAACaWRxAH4ADXhyABd4c2J0aS5hcGkuUGF0aENvbXBvbmVudF+aIlsuhp+8AgAAeHB0AAVzY2FsYXNyAA54c2J0aS5hcGkuVGhpc9sJ7abMWkBcAgAAeHEAfgB+dXIAGltMeHNidGkuYXBpLlBhcmFtZXRlckxpc3Q79dM6HfKzcO4CAAB4cAAAAAFzcgAXeHNidGkuYXBpLlBhcmFtZXRlckxpc3TWxbwcZEl04wIAAloACmlzSW1wbGljaXRbAApwYXJhbWV0ZXJzdAAcW0x4c2J0aS9hcGkvTWV0aG9kUGFyYW1ldGVyO3hwAHVyABxbTHhzYnRpLmFwaS5NZXRob2RQYXJhbWV0ZXI7z7jFXaXdtW0CAAB4cAAAAAFzcgAZeHNidGkuYXBpLk1ldGhvZFBhcmFtZXRlch9FrhfTSbDqAgAEWgAKaGFzRGVmYXVsdEwACG1vZGlmaWVydAAdTHhzYnRpL2FwaS9QYXJhbWV0ZXJNb2RpZmllcjtMAARuYW1lcQB+AA1MAAN0cGVxAH4Aa3hwAH5yABt4c2J0aS5hcGkuUGFyYW1ldGVyTW9kaWZpZXIAAAAAAAAAABIAAHhxAH4AWXQABVBsYWludAAEYXJnc3NyABd4c2J0aS5hcGkuUGFyYW1ldGVyaXplZBZs7mkDybt/AgACTAAIYmFzZVR5cGVxAH4AclsADXR5cGVBcmd1bWVudHN0ABFbTHhzYnRpL2FwaS9UeXBlO3hxAH4AYnNxAH4AcXQABUFycmF5cQB+AHd1cgARW0x4c2J0aS5hcGkuVHlwZTt0/6Vae/npQQIAAHhwAAAAAXNxAH4AcXQABlN0cmluZ3NxAH4AdXNxAH4AeHVxAH4AewAAAANzcQB+AH10AARqYXZhc3EAfgB9dAAEbGFuZ3EAfgCCc3EAfgBedXEAfgBCAAAAAHNxAH4AXnVxAH4AlgAAAANzcQB+AHF0AAxTZXJpYWxpemFibGVzcQB+AHVzcQB+AHh1cQB+AHsAAAADc3EAfgB9cQB+AJ5zcQB+AH10AAJpb3EAfgCCc3EAfgBxdAAGT2JqZWN0cQB+AJpzcQB+AHF0AANBbnlxAH4Ad3VyABRbTHhzYnRpLmFwaS5QYWNrYWdlO1sTGTdwpyehAgAAeHAAAAAAc3IAFXhzYnRpLmFwaS5Db21waWxhdGlvbu364MNq6KBCAgACSgAJc3RhcnRUaW1lWwAHb3V0cHV0c3QAGltMeHNidGkvYXBpL091dHB1dFNldHRpbmc7eHAAAAFioNeqf3VyABpbTHhzYnRpLmFwaS5PdXRwdXRTZXR0aW5nO39qwvOnh6VCAgAAeHAAAAABc3IAF3hzYnRpLmFwaS5PdXRwdXRTZXR0aW5netmaR3T7HXsCAAJMAA9vdXRwdXREaXJlY3RvcnlxAH4ADUwAD3NvdXJjZURpcmVjdG9yeXEAfgANeHB0AEMvVXNlcnMvUGhyaWRhL0lkZWFQcm9qZWN0cy9NYXN0ZXJwcm9zamVrdC90YXJnZXQvc2NhbGEtMi4xMS9jbGFzc2VzdAABL3VyAAJbQqzzF/gGCFTgAgAAeHAAAAAU3T8izXo1cffj7RDFFElJeYQjiaU=
+rO0ABXNyABB4c2J0aS5hcGkuU291cmNlSjH5SdlLSkQCAAdJAAdhcGlIYXNoWgAIaGFzTWFjcm9aABBoYXNQYWNrYWdlT2JqZWN0TAAYX2ludGVybmFsT25seV9uYW1lSGFzaGVzdAAkTHhzYnRpL2FwaS9faW50ZXJuYWxPbmx5X05hbWVIYXNoZXM7TAADYXBpdAAVTHhzYnRpL2FwaS9Tb3VyY2VBUEk7TAALY29tcGlsYXRpb250ABdMeHNidGkvYXBpL0NvbXBpbGF0aW9uO1sABGhhc2h0AAJbQnhwEJueHgAAc3IAInhzYnRpLmFwaS5faW50ZXJuYWxPbmx5X05hbWVIYXNoZXNU2r6Z+tTsTAIAAlsAD2ltcGxpY2l0TWVtYmVyc3QAI1tMeHNidGkvYXBpL19pbnRlcm5hbE9ubHlfTmFtZUhhc2g7WwAOcmVndWxhck1lbWJlcnNxAH4AB3hwdXIAI1tMeHNidGkuYXBpLl9pbnRlcm5hbE9ubHlfTmFtZUhhc2g7SVqAtt2Wi/QCAAB4cAAAAAB1cQB+AAkAAAAYc3IAIHhzYnRpLmFwaS5faW50ZXJuYWxPbmx5X05hbWVIYXNoWw71InY4V88CAAJJAARoYXNoTAAEbmFtZXQAEkxqYXZhL2xhbmcvU3RyaW5nO3hwSUk16nQABm5vdGlmeXNxAH4ADOnjEcJ0AAR3YWl0c3EAfgAMGy7I5HQADlR3ZWV0R2VuZXJhdG9yc3EAfgAMz6MxUXQADSRhc0luc3RhbmNlT2ZzcQB+AAxo8RqvdAAMcmVhZEZyb21GaWxlc3EAfgAMwP69jXQABmVxdWFsc3NxAH4ADLHGI050AAxhc0luc3RhbmNlT2ZzcQB+AAw8G5VvdAAMc3luY2hyb25pemVkc3EAfgAMbTD7zHQADSRpc0luc3RhbmNlT2ZzcQB+AAzglrZ0dAAEbWFpbnNxAH4ADOQgi650AAlub3RpZnlBbGxzcQB+AAwkqDFpdAAMaXNJbnN0YW5jZU9mc3EAfgAMeBgmFHQAAj09c3EAfgAMNtV5inQABWNsb25lc3EAfgAMtao1W3QACHRvU3RyaW5nc3EAfgAMCEz773QAAiE9c3EAfgAMD7BdknQACGdldENsYXNzc3EAfgAMgwuaAnQAC3dyaXRlVG9GaWxlc3EAfgAMoAgf1HQAAm5lc3EAfgAMj1XS1HQAAmVxc3EAfgAMhV7S5HQADWdldEdvb2dsZUxpc3RzcQB+AAyAX1ZZdAACIyNzcQB+AAx/XA6NdAAIZmluYWxpemVzcQB+AAyt1a4DdAAIaGFzaENvZGVzcgATeHNidGkuYXBpLlNvdXJjZUFQSblep/kpIzikAgACWwALZGVmaW5pdGlvbnN0ABdbTHhzYnRpL2FwaS9EZWZpbml0aW9uO1sACHBhY2thZ2VzdAAUW0x4c2J0aS9hcGkvUGFja2FnZTt4cHVyABdbTHhzYnRpLmFwaS5EZWZpbml0aW9uO4jJXOe0414OAgAAeHAAAAABc3IAE3hzYnRpLmFwaS5DbGFzc0xpa2WDNByh37CXbAIABEwADmRlZmluaXRpb25UeXBldAAaTHhzYnRpL2FwaS9EZWZpbml0aW9uVHlwZTtbABBzYXZlZEFubm90YXRpb25zdAATW0xqYXZhL2xhbmcvU3RyaW5nO0wACHNlbGZUeXBldAAQTHhzYnRpL2FwaS9MYXp5O0wACXN0cnVjdHVyZXEAfgBHeHIAIXhzYnRpLmFwaS5QYXJhbWV0ZXJpemVkRGVmaW5pdGlvbvkRbrHVUDziAgABWwAOdHlwZVBhcmFtZXRlcnN0ABpbTHhzYnRpL2FwaS9UeXBlUGFyYW1ldGVyO3hyABR4c2J0aS5hcGkuRGVmaW5pdGlvbocqG+hxQuNGAgAETAAGYWNjZXNzdAASTHhzYnRpL2FwaS9BY2Nlc3M7WwALYW5ub3RhdGlvbnN0ABdbTHhzYnRpL2FwaS9Bbm5vdGF0aW9uO0wACW1vZGlmaWVyc3QAFUx4c2J0aS9hcGkvTW9kaWZpZXJzO0wABG5hbWVxAH4ADXhwc3IAEHhzYnRpLmFwaS5QdWJsaWO6WD2ubC1gQgIAAHhyABB4c2J0aS5hcGkuQWNjZXNz3WKa+B1jMUgCAAB4cHVyABdbTHhzYnRpLmFwaS5Bbm5vdGF0aW9uO+uX6xkQ9o1IAgAAeHAAAAAAc3IAE3hzYnRpLmFwaS5Nb2RpZmllcnOX52HcEyZ7swIAAUIABWZsYWdzeHAAcQB+ABN1cgAaW0x4c2J0aS5hcGkuVHlwZVBhcmFtZXRlcjvZbSYPKJ3ytgIAAHhwAAAAAH5yABh4c2J0aS5hcGkuRGVmaW5pdGlvblR5cGUAAAAAAAAAABIAAHhyAA5qYXZhLmxhbmcuRW51bQAAAAAAAAAAEgAAeHB0AAZNb2R1bGV1cgATW0xqYXZhLmxhbmcuU3RyaW5nO63SVufpHXtHAgAAeHAAAAAAc3IAIXhzYnRpLmFwaS5BYnN0cmFjdExhenkkU3RyaWN0TGF6eQ1mHGspFiq4AgABTAAFdmFsdWV0ABJMamF2YS9sYW5nL09iamVjdDt4cHNyABN4c2J0aS5hcGkuRW1wdHlUeXBlvP2eRkk7iSQCAAB4cgAUeHNidGkuYXBpLlNpbXBsZVR5cGVyeGKIISO/QAIAAHhyAA54c2J0aS5hcGkuVHlwZT9q2SEWSarKAgAAeHBzcQB+AF5zcgATeHNidGkuYXBpLlN0cnVjdHVyZamq+YCTb9gAAgADTAAIZGVjbGFyZWRxAH4AR0wACWluaGVyaXRlZHEAfgBHTAAHcGFyZW50c3EAfgBHeHEAfgBjc3EAfgBedXEAfgBCAAAAAXNyAA14c2J0aS5hcGkuRGVmUr6f4ny0NmkCAAJMAApyZXR1cm5UeXBldAAQTHhzYnRpL2FwaS9UeXBlO1sAD3ZhbHVlUGFyYW1ldGVyc3QAGltMeHNidGkvYXBpL1BhcmFtZXRlckxpc3Q7eHEAfgBIcQB+AFF1cQB+AFIAAAAAc3EAfgBUAHEAfgAhdXEAfgBWAAAAAHNyABR4c2J0aS5hcGkuUHJvamVjdGlvbvPSjVTpRaQtAgACTAACaWRxAH4ADUwABnByZWZpeHQAFkx4c2J0aS9hcGkvU2ltcGxlVHlwZTt4cQB+AGJ0AARVbml0c3IAE3hzYnRpLmFwaS5TaW5nbGV0b278p1/4z1bkRgIAAUwABHBhdGh0ABBMeHNidGkvYXBpL1BhdGg7eHEAfgBic3IADnhzYnRpLmFwaS5QYXRomz1cCM6lJ4QCAAFbAApjb21wb25lbnRzdAAaW0x4c2J0aS9hcGkvUGF0aENvbXBvbmVudDt4cHVyABpbTHhzYnRpLmFwaS5QYXRoQ29tcG9uZW50O0PaCXQtZxZ0AgAAeHAAAAACc3IADHhzYnRpLmFwaS5JZJgybIs3U8RAAgABTAACaWRxAH4ADXhyABd4c2J0aS5hcGkuUGF0aENvbXBvbmVudF+aIlsuhp+8AgAAeHB0AAVzY2FsYXNyAA54c2J0aS5hcGkuVGhpc9sJ7abMWkBcAgAAeHEAfgB+dXIAGltMeHNidGkuYXBpLlBhcmFtZXRlckxpc3Q79dM6HfKzcO4CAAB4cAAAAAFzcgAXeHNidGkuYXBpLlBhcmFtZXRlckxpc3TWxbwcZEl04wIAAloACmlzSW1wbGljaXRbAApwYXJhbWV0ZXJzdAAcW0x4c2J0aS9hcGkvTWV0aG9kUGFyYW1ldGVyO3hwAHVyABxbTHhzYnRpLmFwaS5NZXRob2RQYXJhbWV0ZXI7z7jFXaXdtW0CAAB4cAAAAAFzcgAZeHNidGkuYXBpLk1ldGhvZFBhcmFtZXRlch9FrhfTSbDqAgAEWgAKaGFzRGVmYXVsdEwACG1vZGlmaWVydAAdTHhzYnRpL2FwaS9QYXJhbWV0ZXJNb2RpZmllcjtMAARuYW1lcQB+AA1MAAN0cGVxAH4Aa3hwAH5yABt4c2J0aS5hcGkuUGFyYW1ldGVyTW9kaWZpZXIAAAAAAAAAABIAAHhxAH4AWXQABVBsYWludAAEYXJnc3NyABd4c2J0aS5hcGkuUGFyYW1ldGVyaXplZBZs7mkDybt/AgACTAAIYmFzZVR5cGVxAH4AclsADXR5cGVBcmd1bWVudHN0ABFbTHhzYnRpL2FwaS9UeXBlO3hxAH4AYnNxAH4AcXQABUFycmF5cQB+AHd1cgARW0x4c2J0aS5hcGkuVHlwZTt0/6Vae/npQQIAAHhwAAAAAXNxAH4AcXQABlN0cmluZ3NxAH4AdXNxAH4AeHVxAH4AewAAAANzcQB+AH10AARqYXZhc3EAfgB9dAAEbGFuZ3EAfgCCc3EAfgBedXEAfgBCAAAAAHNxAH4AXnVxAH4AlgAAAANzcQB+AHF0AAxTZXJpYWxpemFibGVzcQB+AHVzcQB+AHh1cQB+AHsAAAADc3EAfgB9cQB+AJ5zcQB+AH10AAJpb3EAfgCCc3EAfgBxdAAGT2JqZWN0cQB+AJpzcQB+AHF0AANBbnlxAH4Ad3VyABRbTHhzYnRpLmFwaS5QYWNrYWdlO1sTGTdwpyehAgAAeHAAAAAAc3IAFXhzYnRpLmFwaS5Db21waWxhdGlvbu364MNq6KBCAgACSgAJc3RhcnRUaW1lWwAHb3V0cHV0c3QAGltMeHNidGkvYXBpL091dHB1dFNldHRpbmc7eHAAAAFioavrZnVyABpbTHhzYnRpLmFwaS5PdXRwdXRTZXR0aW5nO39qwvOnh6VCAgAAeHAAAAABc3IAF3hzYnRpLmFwaS5PdXRwdXRTZXR0aW5netmaR3T7HXsCAAJMAA9vdXRwdXREaXJlY3RvcnlxAH4ADUwAD3NvdXJjZURpcmVjdG9yeXEAfgANeHB0AEMvVXNlcnMvUGhyaWRhL0lkZWFQcm9qZWN0cy9NYXN0ZXJwcm9zamVrdC90YXJnZXQvc2NhbGEtMi4xMS9jbGFzc2VzdAABL3VyAAJbQqzzF/gGCFTgAgAAeHAAAAAUbta0lzPcBgmgSr6+MO0FMO1qrgI=
 /Users/Phrida/IdeaProjects/Masterprosjekt/src/main/scala/utils/PropertiesLoader.scala -> 
 rO0ABXNyABB4c2J0aS5hcGkuU291cmNlSjH5SdlLSkQCAAdJAAdhcGlIYXNoWgAIaGFzTWFjcm9aABBoYXNQYWNrYWdlT2JqZWN0TAAYX2ludGVybmFsT25seV9uYW1lSGFzaGVzdAAkTHhzYnRpL2FwaS9faW50ZXJuYWxPbmx5X05hbWVIYXNoZXM7TAADYXBpdAAVTHhzYnRpL2FwaS9Tb3VyY2VBUEk7TAALY29tcGlsYXRpb250ABdMeHNidGkvYXBpL0NvbXBpbGF0aW9uO1sABGhhc2h0AAJbQnhwibZzdAAAc3IAInhzYnRpLmFwaS5faW50ZXJuYWxPbmx5X05hbWVIYXNoZXNU2r6Z+tTsTAIAAlsAD2ltcGxpY2l0TWVtYmVyc3QAI1tMeHNidGkvYXBpL19pbnRlcm5hbE9ubHlfTmFtZUhhc2g7WwAOcmVndWxhck1lbWJlcnNxAH4AB3hwdXIAI1tMeHNidGkuYXBpLl9pbnRlcm5hbE9ubHlfTmFtZUhhc2g7SVqAtt2Wi/QCAAB4cAAAAAB1cQB+AAkAAAAac3IAIHhzYnRpLmFwaS5faW50ZXJuYWxPbmx5X05hbWVIYXNoWw71InY4V88CAAJJAARoYXNoTAAEbmFtZXQAEkxqYXZhL2xhbmcvU3RyaW5nO3hwXpchT3QABm5vdGlmeXNxAH4ADHaJaIR0ABBQcm9wZXJ0aWVzTG9hZGVyc3EAfgAMWcyQL3QABHdhaXRzcQB+AAy4TxlidAANJGFzSW5zdGFuY2VPZnNxAH4ADFywTvZ0ABNuYWl2ZUJheWVzTW9kZWxQYXRoc3EAfgAMgQwUW3QAG3NlbnRpbWVudDE0MFRlc3RpbmdGaWxlUGF0aHNxAH4ADO4lFPl0AAZlcXVhbHNzcQB+AAxgR2rCdAARbW9kZWxBY2N1cmFjeVBhdGhzcQB+AAylCfaRdAARc3RvcFdvcmRzRmlsZVBhdGhzcQB+AAzf+a0UdAAMYXNJbnN0YW5jZU9mc3EAfgAM5lJxRHQADHN5bmNocm9uaXplZHNxAH4ADKQg4Xx0AA0kaXNJbnN0YW5jZU9mc3EAfgAMHM/+gXQACW5vdGlmeUFsbHNxAH4ADMW9osR0AAxpc0luc3RhbmNlT2ZzcQB+AAwI7BMTdAAQa2V5d29yZHNGaWxlUGF0aHNxAH4ADLmv6A90AAI9PXNxAH4ADPEFK510AAVjbG9uZXNxAH4ADEsJujh0AAh0b1N0cmluZ3NxAH4ADOA3NLt0AAIhPXNxAH4ADMXB7Ad0AAhnZXRDbGFzc3NxAH4ADNrRauB0AAJuZXNxAH4ADLOnMNN0AB9zZW50aW1lbnQxNDBUcmFpbmluZ1NldEZpbGVQYXRoc3EAfgAMoPFhq3QAAmVxc3EAfgAMd11j6nQAAiMjc3EAfgAMOsGwt3QACGZpbmFsaXplc3EAfgAMlF8xu3QACGhhc2hDb2Rlc3IAE3hzYnRpLmFwaS5Tb3VyY2VBUEm5Xqf5KSM4pAIAAlsAC2RlZmluaXRpb25zdAAXW0x4c2J0aS9hcGkvRGVmaW5pdGlvbjtbAAhwYWNrYWdlc3QAFFtMeHNidGkvYXBpL1BhY2thZ2U7eHB1cgAXW0x4c2J0aS5hcGkuRGVmaW5pdGlvbjuIyVzntONeDgIAAHhwAAAAAXNyABN4c2J0aS5hcGkuQ2xhc3NMaWtlgzQcod+wl2wCAARMAA5kZWZpbml0aW9uVHlwZXQAGkx4c2J0aS9hcGkvRGVmaW5pdGlvblR5cGU7WwAQc2F2ZWRBbm5vdGF0aW9uc3QAE1tMamF2YS9sYW5nL1N0cmluZztMAAhzZWxmVHlwZXQAEEx4c2J0aS9hcGkvTGF6eTtMAAlzdHJ1Y3R1cmVxAH4AS3hyACF4c2J0aS5hcGkuUGFyYW1ldGVyaXplZERlZmluaXRpb275EW6x1VA84gIAAVsADnR5cGVQYXJhbWV0ZXJzdAAaW0x4c2J0aS9hcGkvVHlwZVBhcmFtZXRlcjt4cgAUeHNidGkuYXBpLkRlZmluaXRpb26HKhvocULjRgIABEwABmFjY2Vzc3QAEkx4c2J0aS9hcGkvQWNjZXNzO1sAC2Fubm90YXRpb25zdAAXW0x4c2J0aS9hcGkvQW5ub3RhdGlvbjtMAAltb2RpZmllcnN0ABVMeHNidGkvYXBpL01vZGlmaWVycztMAARuYW1lcQB+AA14cHNyABB4c2J0aS5hcGkuUHVibGljulg9rmwtYEICAAB4cgAQeHNidGkuYXBpLkFjY2Vzc91imvgdYzFIAgAAeHB1cgAXW0x4c2J0aS5hcGkuQW5ub3RhdGlvbjvrl+sZEPaNSAIAAHhwAAAAAHNyABN4c2J0aS5hcGkuTW9kaWZpZXJzl+dh3BMme7MCAAFCAAVmbGFnc3hwAHQAFnV0aWxzLlByb3BlcnRpZXNMb2FkZXJ1cgAaW0x4c2J0aS5hcGkuVHlwZVBhcmFtZXRlcjvZbSYPKJ3ytgIAAHhwAAAAAH5yABh4c2J0aS5hcGkuRGVmaW5pdGlvblR5cGUAAAAAAAAAABIAAHhyAA5qYXZhLmxhbmcuRW51bQAAAAAAAAAAEgAAeHB0AAZNb2R1bGV1cgATW0xqYXZhLmxhbmcuU3RyaW5nO63SVufpHXtHAgAAeHAAAAAAc3IAIXhzYnRpLmFwaS5BYnN0cmFjdExhenkkU3RyaWN0TGF6eQ1mHGspFiq4AgABTAAFdmFsdWV0ABJMamF2YS9sYW5nL09iamVjdDt4cHNyABN4c2J0aS5hcGkuRW1wdHlUeXBlvP2eRkk7iSQCAAB4cgAUeHNidGkuYXBpLlNpbXBsZVR5cGVyeGKIISO/QAIAAHhyAA54c2J0aS5hcGkuVHlwZT9q2SEWSarKAgAAeHBzcQB+AGNzcgATeHNidGkuYXBpLlN0cnVjdHVyZamq+YCTb9gAAgADTAAIZGVjbGFyZWRxAH4AS0wACWluaGVyaXRlZHEAfgBLTAAHcGFyZW50c3EAfgBLeHEAfgBoc3EAfgBjdXEAfgBGAAAAAHNxAH4AY3VxAH4ARgAAAABzcQB+AGN1cgARW0x4c2J0aS5hcGkuVHlwZTt0/6Vae/npQQIAAHhwAAAAAnNyABR4c2J0aS5hcGkuUHJvamVjdGlvbvPSjVTpRaQtAgACTAACaWRxAH4ADUwABnByZWZpeHQAFkx4c2J0aS9hcGkvU2ltcGxlVHlwZTt4cQB+AGd0AAZPYmplY3RzcgATeHNidGkuYXBpLlNpbmdsZXRvbvynX/jPVuRGAgABTAAEcGF0aHQAEEx4c2J0aS9hcGkvUGF0aDt4cQB+AGdzcgAOeHNidGkuYXBpLlBhdGibPVwIzqUnhAIAAVsACmNvbXBvbmVudHN0ABpbTHhzYnRpL2FwaS9QYXRoQ29tcG9uZW50O3hwdXIAGltMeHNidGkuYXBpLlBhdGhDb21wb25lbnQ7Q9oJdC1nFnQCAAB4cAAAAANzcgAMeHNidGkuYXBpLklkmDJsizdTxEACAAFMAAJpZHEAfgANeHIAF3hzYnRpLmFwaS5QYXRoQ29tcG9uZW50X5oiWy6Gn7wCAAB4cHQABGphdmFzcQB+AIB0AARsYW5nc3IADnhzYnRpLmFwaS5UaGlz2wntpsxaQFwCAAB4cQB+AIFzcQB+AHR0AANBbnlzcQB+AHhzcQB+AHt1cQB+AH4AAAACc3EAfgCAdAAFc2NhbGFxAH4Ah3VyABRbTHhzYnRpLmFwaS5QYWNrYWdlO1sTGTdwpyehAgAAeHAAAAABc3IAEXhzYnRpLmFwaS5QYWNrYWdlflmP9q7OOVgCAAFMAARuYW1lcQB+AA14cHQABXV0aWxzc3IAFXhzYnRpLmFwaS5Db21waWxhdGlvbu364MNq6KBCAgACSgAJc3RhcnRUaW1lWwAHb3V0cHV0c3QAGltMeHNidGkvYXBpL091dHB1dFNldHRpbmc7eHAAAAFile2743VyABpbTHhzYnRpLmFwaS5PdXRwdXRTZXR0aW5nO39qwvOnh6VCAgAAeHAAAAABc3IAF3hzYnRpLmFwaS5PdXRwdXRTZXR0aW5netmaR3T7HXsCAAJMAA9vdXRwdXREaXJlY3RvcnlxAH4ADUwAD3NvdXJjZURpcmVjdG9yeXEAfgANeHB0AEMvVXNlcnMvUGhyaWRhL0lkZWFQcm9qZWN0cy9NYXN0ZXJwcm9zamVrdC90YXJnZXQvc2NhbGEtMi4xMS9jbGFzc2VzdAABL3VyAAJbQqzzF/gGCFTgAgAAeHAAAAAUSg5N68ZDWTrgnxDyMcnhHFHE41k=
 /Users/Phrida/IdeaProjects/Masterprosjekt/src/main/scala/utils/SQLContextSingleton.scala -> 
@@ -352,7 +393,7 @@ AAAAAAAAAAA=
 /Users/Phrida/IdeaProjects/Masterprosjekt/src/main/scala/utils/SQLContextSingleton.scala -> 
 AAAAAAAAAAA=
 compilations:
-282 items
+291 items
 000 -> rO0ABXNyABV4c2J0aS5hcGkuQ29tcGlsYXRpb27t+uDDauigQgIAAkoACXN0YXJ0VGltZVsAB291dHB1dHN0ABpbTHhzYnRpL2FwaS9PdXRwdXRTZXR0aW5nO3hwAAABYgsnaJt1cgAaW0x4c2J0aS5hcGkuT3V0cHV0U2V0dGluZzt/asLzp4elQgIAAHhwAAAAAXNyABd4c2J0aS5hcGkuT3V0cHV0U2V0dGluZ3rZmkd0+x17AgACTAAPb3V0cHV0RGlyZWN0b3J5dAASTGphdmEvbGFuZy9TdHJpbmc7TAAPc291cmNlRGlyZWN0b3J5cQB+AAZ4cHQAQy9Vc2Vycy9QaHJpZGEvSWRlYVByb2plY3RzL01hc3RlcnByb3NqZWt0L3RhcmdldC9zY2FsYS0yLjExL2NsYXNzZXN0AAEv
 001 -> rO0ABXNyABV4c2J0aS5hcGkuQ29tcGlsYXRpb27t+uDDauigQgIAAkoACXN0YXJ0VGltZVsAB291dHB1dHN0ABpbTHhzYnRpL2FwaS9PdXRwdXRTZXR0aW5nO3hwAAABYgsp1al1cgAaW0x4c2J0aS5hcGkuT3V0cHV0U2V0dGluZzt/asLzp4elQgIAAHhwAAAAAXNyABd4c2J0aS5hcGkuT3V0cHV0U2V0dGluZ3rZmkd0+x17AgACTAAPb3V0cHV0RGlyZWN0b3J5dAASTGphdmEvbGFuZy9TdHJpbmc7TAAPc291cmNlRGlyZWN0b3J5cQB+AAZ4cHQAQy9Vc2Vycy9QaHJpZGEvSWRlYVByb2plY3RzL01hc3RlcnByb3NqZWt0L3RhcmdldC9zY2FsYS0yLjExL2NsYXNzZXN0AAEv
 002 -> rO0ABXNyABV4c2J0aS5hcGkuQ29tcGlsYXRpb27t+uDDauigQgIAAkoACXN0YXJ0VGltZVsAB291dHB1dHN0ABpbTHhzYnRpL2FwaS9PdXRwdXRTZXR0aW5nO3hwAAABYgtlKm11cgAaW0x4c2J0aS5hcGkuT3V0cHV0U2V0dGluZzt/asLzp4elQgIAAHhwAAAAAXNyABd4c2J0aS5hcGkuT3V0cHV0U2V0dGluZ3rZmkd0+x17AgACTAAPb3V0cHV0RGlyZWN0b3J5dAASTGphdmEvbGFuZy9TdHJpbmc7TAAPc291cmNlRGlyZWN0b3J5cQB+AAZ4cHQAQy9Vc2Vycy9QaHJpZGEvSWRlYVByb2plY3RzL01hc3RlcnByb3NqZWt0L3RhcmdldC9zY2FsYS0yLjExL2NsYXNzZXN0AAEv
@@ -635,3 +676,12 @@ compilations:
 279 -> rO0ABXNyABV4c2J0aS5hcGkuQ29tcGlsYXRpb27t+uDDauigQgIAAkoACXN0YXJ0VGltZVsAB291dHB1dHN0ABpbTHhzYnRpL2FwaS9PdXRwdXRTZXR0aW5nO3hwAAABYqDSSOx1cgAaW0x4c2J0aS5hcGkuT3V0cHV0U2V0dGluZzt/asLzp4elQgIAAHhwAAAAAXNyABd4c2J0aS5hcGkuT3V0cHV0U2V0dGluZ3rZmkd0+x17AgACTAAPb3V0cHV0RGlyZWN0b3J5dAASTGphdmEvbGFuZy9TdHJpbmc7TAAPc291cmNlRGlyZWN0b3J5cQB+AAZ4cHQAQy9Vc2Vycy9QaHJpZGEvSWRlYVByb2plY3RzL01hc3RlcnByb3NqZWt0L3RhcmdldC9zY2FsYS0yLjExL2NsYXNzZXN0AAEv
 280 -> rO0ABXNyABV4c2J0aS5hcGkuQ29tcGlsYXRpb27t+uDDauigQgIAAkoACXN0YXJ0VGltZVsAB291dHB1dHN0ABpbTHhzYnRpL2FwaS9PdXRwdXRTZXR0aW5nO3hwAAABYqDU4ch1cgAaW0x4c2J0aS5hcGkuT3V0cHV0U2V0dGluZzt/asLzp4elQgIAAHhwAAAAAXNyABd4c2J0aS5hcGkuT3V0cHV0U2V0dGluZ3rZmkd0+x17AgACTAAPb3V0cHV0RGlyZWN0b3J5dAASTGphdmEvbGFuZy9TdHJpbmc7TAAPc291cmNlRGlyZWN0b3J5cQB+AAZ4cHQAQy9Vc2Vycy9QaHJpZGEvSWRlYVByb2plY3RzL01hc3RlcnByb3NqZWt0L3RhcmdldC9zY2FsYS0yLjExL2NsYXNzZXN0AAEv
 281 -> rO0ABXNyABV4c2J0aS5hcGkuQ29tcGlsYXRpb27t+uDDauigQgIAAkoACXN0YXJ0VGltZVsAB291dHB1dHN0ABpbTHhzYnRpL2FwaS9PdXRwdXRTZXR0aW5nO3hwAAABYqDXqn91cgAaW0x4c2J0aS5hcGkuT3V0cHV0U2V0dGluZzt/asLzp4elQgIAAHhwAAAAAXNyABd4c2J0aS5hcGkuT3V0cHV0U2V0dGluZ3rZmkd0+x17AgACTAAPb3V0cHV0RGlyZWN0b3J5dAASTGphdmEvbGFuZy9TdHJpbmc7TAAPc291cmNlRGlyZWN0b3J5cQB+AAZ4cHQAQy9Vc2Vycy9QaHJpZGEvSWRlYVByb2plY3RzL01hc3RlcnByb3NqZWt0L3RhcmdldC9zY2FsYS0yLjExL2NsYXNzZXN0AAEv
+282 -> rO0ABXNyABV4c2J0aS5hcGkuQ29tcGlsYXRpb27t+uDDauigQgIAAkoACXN0YXJ0VGltZVsAB291dHB1dHN0ABpbTHhzYnRpL2FwaS9PdXRwdXRTZXR0aW5nO3hwAAABYqFZa1p1cgAaW0x4c2J0aS5hcGkuT3V0cHV0U2V0dGluZzt/asLzp4elQgIAAHhwAAAAAXNyABd4c2J0aS5hcGkuT3V0cHV0U2V0dGluZ3rZmkd0+x17AgACTAAPb3V0cHV0RGlyZWN0b3J5dAASTGphdmEvbGFuZy9TdHJpbmc7TAAPc291cmNlRGlyZWN0b3J5cQB+AAZ4cHQAQy9Vc2Vycy9QaHJpZGEvSWRlYVByb2plY3RzL01hc3RlcnByb3NqZWt0L3RhcmdldC9zY2FsYS0yLjExL2NsYXNzZXN0AAEv
+283 -> rO0ABXNyABV4c2J0aS5hcGkuQ29tcGlsYXRpb27t+uDDauigQgIAAkoACXN0YXJ0VGltZVsAB291dHB1dHN0ABpbTHhzYnRpL2FwaS9PdXRwdXRTZXR0aW5nO3hwAAABYqFfcbR1cgAaW0x4c2J0aS5hcGkuT3V0cHV0U2V0dGluZzt/asLzp4elQgIAAHhwAAAAAXNyABd4c2J0aS5hcGkuT3V0cHV0U2V0dGluZ3rZmkd0+x17AgACTAAPb3V0cHV0RGlyZWN0b3J5dAASTGphdmEvbGFuZy9TdHJpbmc7TAAPc291cmNlRGlyZWN0b3J5cQB+AAZ4cHQAQy9Vc2Vycy9QaHJpZGEvSWRlYVByb2plY3RzL01hc3RlcnByb3NqZWt0L3RhcmdldC9zY2FsYS0yLjExL2NsYXNzZXN0AAEv
+284 -> rO0ABXNyABV4c2J0aS5hcGkuQ29tcGlsYXRpb27t+uDDauigQgIAAkoACXN0YXJ0VGltZVsAB291dHB1dHN0ABpbTHhzYnRpL2FwaS9PdXRwdXRTZXR0aW5nO3hwAAABYqFjNCp1cgAaW0x4c2J0aS5hcGkuT3V0cHV0U2V0dGluZzt/asLzp4elQgIAAHhwAAAAAXNyABd4c2J0aS5hcGkuT3V0cHV0U2V0dGluZ3rZmkd0+x17AgACTAAPb3V0cHV0RGlyZWN0b3J5dAASTGphdmEvbGFuZy9TdHJpbmc7TAAPc291cmNlRGlyZWN0b3J5cQB+AAZ4cHQAQy9Vc2Vycy9QaHJpZGEvSWRlYVByb2plY3RzL01hc3RlcnByb3NqZWt0L3RhcmdldC9zY2FsYS0yLjExL2NsYXNzZXN0AAEv
+285 -> rO0ABXNyABV4c2J0aS5hcGkuQ29tcGlsYXRpb27t+uDDauigQgIAAkoACXN0YXJ0VGltZVsAB291dHB1dHN0ABpbTHhzYnRpL2FwaS9PdXRwdXRTZXR0aW5nO3hwAAABYqGGbHh1cgAaW0x4c2J0aS5hcGkuT3V0cHV0U2V0dGluZzt/asLzp4elQgIAAHhwAAAAAXNyABd4c2J0aS5hcGkuT3V0cHV0U2V0dGluZ3rZmkd0+x17AgACTAAPb3V0cHV0RGlyZWN0b3J5dAASTGphdmEvbGFuZy9TdHJpbmc7TAAPc291cmNlRGlyZWN0b3J5cQB+AAZ4cHQAQy9Vc2Vycy9QaHJpZGEvSWRlYVByb2plY3RzL01hc3RlcnByb3NqZWt0L3RhcmdldC9zY2FsYS0yLjExL2NsYXNzZXN0AAEv
+286 -> rO0ABXNyABV4c2J0aS5hcGkuQ29tcGlsYXRpb27t+uDDauigQgIAAkoACXN0YXJ0VGltZVsAB291dHB1dHN0ABpbTHhzYnRpL2FwaS9PdXRwdXRTZXR0aW5nO3hwAAABYqGMBwB1cgAaW0x4c2J0aS5hcGkuT3V0cHV0U2V0dGluZzt/asLzp4elQgIAAHhwAAAAAXNyABd4c2J0aS5hcGkuT3V0cHV0U2V0dGluZ3rZmkd0+x17AgACTAAPb3V0cHV0RGlyZWN0b3J5dAASTGphdmEvbGFuZy9TdHJpbmc7TAAPc291cmNlRGlyZWN0b3J5cQB+AAZ4cHQAQy9Vc2Vycy9QaHJpZGEvSWRlYVByb2plY3RzL01hc3RlcnByb3NqZWt0L3RhcmdldC9zY2FsYS0yLjExL2NsYXNzZXN0AAEv
+287 -> rO0ABXNyABV4c2J0aS5hcGkuQ29tcGlsYXRpb27t+uDDauigQgIAAkoACXN0YXJ0VGltZVsAB291dHB1dHN0ABpbTHhzYnRpL2FwaS9PdXRwdXRTZXR0aW5nO3hwAAABYqGOvvh1cgAaW0x4c2J0aS5hcGkuT3V0cHV0U2V0dGluZzt/asLzp4elQgIAAHhwAAAAAXNyABd4c2J0aS5hcGkuT3V0cHV0U2V0dGluZ3rZmkd0+x17AgACTAAPb3V0cHV0RGlyZWN0b3J5dAASTGphdmEvbGFuZy9TdHJpbmc7TAAPc291cmNlRGlyZWN0b3J5cQB+AAZ4cHQAQy9Vc2Vycy9QaHJpZGEvSWRlYVByb2plY3RzL01hc3RlcnByb3NqZWt0L3RhcmdldC9zY2FsYS0yLjExL2NsYXNzZXN0AAEv
+288 -> rO0ABXNyABV4c2J0aS5hcGkuQ29tcGlsYXRpb27t+uDDauigQgIAAkoACXN0YXJ0VGltZVsAB291dHB1dHN0ABpbTHhzYnRpL2FwaS9PdXRwdXRTZXR0aW5nO3hwAAABYqGZbKJ1cgAaW0x4c2J0aS5hcGkuT3V0cHV0U2V0dGluZzt/asLzp4elQgIAAHhwAAAAAXNyABd4c2J0aS5hcGkuT3V0cHV0U2V0dGluZ3rZmkd0+x17AgACTAAPb3V0cHV0RGlyZWN0b3J5dAASTGphdmEvbGFuZy9TdHJpbmc7TAAPc291cmNlRGlyZWN0b3J5cQB+AAZ4cHQAQy9Vc2Vycy9QaHJpZGEvSWRlYVByb2plY3RzL01hc3RlcnByb3NqZWt0L3RhcmdldC9zY2FsYS0yLjExL2NsYXNzZXN0AAEv
+289 -> rO0ABXNyABV4c2J0aS5hcGkuQ29tcGlsYXRpb27t+uDDauigQgIAAkoACXN0YXJ0VGltZVsAB291dHB1dHN0ABpbTHhzYnRpL2FwaS9PdXRwdXRTZXR0aW5nO3hwAAABYqGhr791cgAaW0x4c2J0aS5hcGkuT3V0cHV0U2V0dGluZzt/asLzp4elQgIAAHhwAAAAAXNyABd4c2J0aS5hcGkuT3V0cHV0U2V0dGluZ3rZmkd0+x17AgACTAAPb3V0cHV0RGlyZWN0b3J5dAASTGphdmEvbGFuZy9TdHJpbmc7TAAPc291cmNlRGlyZWN0b3J5cQB+AAZ4cHQAQy9Vc2Vycy9QaHJpZGEvSWRlYVByb2plY3RzL01hc3RlcnByb3NqZWt0L3RhcmdldC9zY2FsYS0yLjExL2NsYXNzZXN0AAEv
+290 -> rO0ABXNyABV4c2J0aS5hcGkuQ29tcGlsYXRpb27t+uDDauigQgIAAkoACXN0YXJ0VGltZVsAB291dHB1dHN0ABpbTHhzYnRpL2FwaS9PdXRwdXRTZXR0aW5nO3hwAAABYqGr62Z1cgAaW0x4c2J0aS5hcGkuT3V0cHV0U2V0dGluZzt/asLzp4elQgIAAHhwAAAAAXNyABd4c2J0aS5hcGkuT3V0cHV0U2V0dGluZ3rZmkd0+x17AgACTAAPb3V0cHV0RGlyZWN0b3J5dAASTGphdmEvbGFuZy9TdHJpbmc7TAAPc291cmNlRGlyZWN0b3J5cQB+AAZ4cHQAQy9Vc2Vycy9QaHJpZGEvSWRlYVByb2plY3RzL01hc3RlcnByb3NqZWt0L3RhcmdldC9zY2FsYS0yLjExL2NsYXNzZXN0AAEv
