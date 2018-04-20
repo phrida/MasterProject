@@ -3,22 +3,17 @@ import java.text.SimpleDateFormat
 
 import twitter4j._
 import net.liftweb.json._
-import org.apache.hadoop.io.compress.GzipCodec
-import org.apache.spark.broadcast.Broadcast
 import org.apache.spark.mllib.classification.{NaiveBayes, NaiveBayesModel}
-import org.apache.spark.mllib.feature.HashingTF
-import org.apache.spark.mllib.linalg
-import org.apache.spark.mllib.regression.LabeledPoint
-import org.apache.spark.rdd.RDD
-import org.apache.spark.sql.{DataFrame, Row, SaveMode}
+
+import org.apache.spark.streaming.kafka.KafkaUtils
 import org.apache.spark.{SparkConf, SparkContext}
-import org.apache.spark.streaming.kafka.{HasOffsetRanges, KafkaUtils}
 import org.apache.spark.streaming.twitter.TwitterUtils
 import org.apache.spark.streaming.{Minutes, Seconds, StreamingContext}
 import org.elasticsearch.spark.rdd.EsSpark
 
 import scala.collection.mutable.{ArrayBuffer, ListBuffer}
 import scalaj.http.{Http, HttpResponse}
+import twitter4j.conf.ConfigurationBuilder
 import utils.{PropertiesLoader, SQLContextSingleton}
 
 import scala.collection.immutable.HashMap
@@ -31,10 +26,11 @@ object TweetGenerator extends Serializable {
   def main(args: Array[String]): Unit = {
 
     //Inställningar för twitter
-    System.setProperty("twitter4j.oauth.consumerKey", "pgd3EgAAYy0NsHfc6TD5XA4m0")
-    System.setProperty("twitter4j.oauth.consumerSecret", "cp7LR8o4FQTc72cszuFoiQP0BQcEkpgoOHMqMn0mSLu6KFoxek")
-    System.setProperty("twitter4j.oauth.accessToken", "384519993-dSTbfXUJe2FOaAnxPdw22i1s4QFj83MWtgBFMhZs")
-    System.setProperty("twitter4j.oauth.accessTokenSecret", "W3uxu0BdpqIhuByjaa2xWXm2Ae6yFuIofI4dTyKzz87wa")
+    System.setProperty("twitter4j.oauth.consumerKey", "WeJAx0QjHyZuFIuOT0mCAlJqR")
+    System.setProperty("twitter4j.oauth.consumerSecret", "AF1PYLqk6XPrgFMlYgDQq3l91v6eHpnimlH1u45OSX3yTggMvP")
+    System.setProperty("twitter4j.oauth.accessToken", "384519993-b2PNRU3TiLxt5gTSUOlUamac7UuHZvWiF2pk9ZqU")
+    System.setProperty("twitter4j.oauth.accessTokenSecret", "xRnVgh2CpD41GKi0W0B2Z5JA6S8JRIL83W8NuuiuK4CtW")
+
 
 
     val zkQuorum = "localhost:2181"
@@ -43,27 +39,30 @@ object TweetGenerator extends Serializable {
     val twitterTopic = Set("twitterdata")
     val numThreads = 1
     //val Array(zkQuorum, group, topics, numThreads) = args;
-    val sparkConf = new SparkConf().setAppName("TweetGenerator").setMaster("local[*]")
+    val sparkConf = new SparkConf().setAppName("TweetGenerator").setMaster("local[4]")
     sparkConf.set("es.index.auto.create", "true")
     sparkConf.set("es.resource", "visualization/tweets")
     sparkConf.set("es.nodes", "localhost")
     sparkConf.set("es.port", "9200")
     sparkConf.set("es.nodes.discovery", "true")
+    sparkConf.set("es.net.http.auth.user", "elastic")
+    sparkConf.set("es.net.http.auth.pass", "sCzfSGEHl2pV7LnIFiPU")
     val index_name = "twitter"
-    val ssc = new StreamingContext(sparkConf, Seconds(2))
+    val ssc = new StreamingContext(sparkConf, Seconds(1))
     ssc.sparkContext.setLogLevel("OFF")
+
     val stopWordsList = ssc.sparkContext.broadcast(loadStopWords())
 
     //Create Naive Bayes Model
-    SentimentModel.createAndSaveNBModel(ssc.sparkContext, stopWordsList)
+    //SentimentModel.createAndSaveNBModel(ssc.sparkContext, stopWordsList)
     //Validate Accuracy
-    SentimentModel.validateAccuracyOfNBModel(ssc.sparkContext, stopWordsList)
+    //SentimentModel.validateAccuracyOfNBModel(ssc.sparkContext, stopWordsList)
     val naiveBayesModel = NaiveBayesModel.load(ssc.sparkContext, PropertiesLoader.naiveBayesModelPath)
 
 
 
     val initialFile = new ListBuffer[String]
-    initialFile.append("Initial")
+    initialFile.append("hdjksahjdka")
     writeToFile(initialFile)
     println("Initial file: " + readFromFile())
 
@@ -96,26 +95,22 @@ object TweetGenerator extends Serializable {
     filterWords.foreachRDD(rdd => {
       rdd.foreach(word => {
         val words = new ListBuffer[String]
+        words.append(word)
         val googleWords = getGoogleList(word)
         println("Word to append: " + word)
         googleWords.foreach(word => words.append(word))
-        println("Words in ListBuffer: " + words)
         writeToFile(words)
         println("Words in file: " + readFromFile())
-        println("Head in file: " + readFromFile())
-        val status = "this is a test status"
-        val filter = List("this", "hej", "status")
-        println("Test of function: " + filter.exists(status.contains(_)))
       })
     })
 
-    val tweets = KafkaUtils.createStream(ssc, zkQuorum, group, Map("twitterdata" -> 1)).map(_._2)
-
-    //tweets.print()
-    //val tweets = TwitterUtils.createStream(ssc.get, None)
+    //val tweets = KafkaUtils.createStream(ssc, zkQuorum, group, Map("twitterdata" -> 1)).map(_._2)
+    val tweets = ssc.socketTextStream("localhost", 10001)
 
     //val filteredTweets = tweets.filter(_.contains(readFromFile()))
     val filteredTweets = tweets.filter(status => readFromFile().exists(status.contains(_)))
+
+
 
     val tweetMap = filteredTweets.map(json => {
       val status = TwitterObjectFactory.createStatus(json)
@@ -140,13 +135,14 @@ object TweetGenerator extends Serializable {
         "placeCountry" -> Option(status.getPlace).map(place => {s"${place.getCountry}"}),
         "userLanguage" -> status.getUser.getLang,
         "statusLanguage" -> status.getLang,
-        "sentiment" -> translatedSentiment
+        "sentiment" -> translatedSentiment,
+        "deviceType" -> status.getSource
       )
     })
 
-    tweetMap.print()
+    //tweetMap.print()
 
-    //tweetMap.foreachRDD(tweet => EsSpark.saveToEs(tweet, "visualization/tweets"))
+    tweetMap.foreachRDD(tweet => EsSpark.saveToEs(tweet, "visualization/tweets"))
 
 
     ssc.start()
@@ -198,6 +194,7 @@ object TweetGenerator extends Serializable {
   def isTweetInEnglish(status: Status): Boolean = {
     status.getLang == "en" && status.getUser.getLang == "en"
   }
+
 
 
 
