@@ -22,6 +22,13 @@
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" name="sbt: org.scala-lang:scala-library:2.11.8:jar" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="sbt: org.codehaus.janino:janino:3.0.0:jar" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="sbt: org.codehaus.janino:commons-compiler:3.0.0:jar" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="sbt: org.antlr:antlr4-runtime:4.5.3:jar" level="project" />
+    <orderEntry type="library" scope="RUNTIME" name="sbt: commons-codec:commons-codec:1.8:jar" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="sbt: commons-codec:commons-codec:1.10:jar" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="sbt: com.univocity:univocity-parsers:2.2.1:jar" level="project" />
+    <orderEntry type="library" scope="RUNTIME" name="sbt: com.univocity:univocity-parsers:1.5.1:jar" level="project" />
     <orderEntry type="library" name="sbt: org.apache.spark:spark-streaming-kafka_2.11:1.6.0:jar" level="project" />
     <orderEntry type="library" name="sbt: org.scalaj:scalaj-http_2.11:2.3.0:jar" level="project" />
     <orderEntry type="library" name="sbt: org.xerial.snappy:snappy-java:1.1.4:jar" level="project" />
@@ -58,13 +65,9 @@
     <orderEntry type="library" name="sbt: com.twitter:chill-java:0.8.0:jar" level="project" />
     <orderEntry type="library" name="sbt: com.twitter:chill_2.11:0.8.0:jar" level="project" />
     <orderEntry type="library" name="sbt: com.typesafe:config:1.3.2:jar" level="project" />
-    <orderEntry type="library" scope="RUNTIME" name="sbt: com.univocity:univocity-parsers:1.5.1:jar" level="project" />
-    <orderEntry type="library" scope="PROVIDED" name="sbt: com.univocity:univocity-parsers:2.2.1:jar" level="project" />
     <orderEntry type="library" name="sbt: commons-beanutils:commons-beanutils:1.7.0:jar" level="project" />
     <orderEntry type="library" name="sbt: commons-beanutils:commons-beanutils-core:1.8.0:jar" level="project" />
     <orderEntry type="library" name="sbt: commons-cli:commons-cli:1.2:jar" level="project" />
-    <orderEntry type="library" scope="PROVIDED" name="sbt: commons-codec:commons-codec:1.10:jar" level="project" />
-    <orderEntry type="library" scope="RUNTIME" name="sbt: commons-codec:commons-codec:1.8:jar" level="project" />
     <orderEntry type="library" name="sbt: commons-collections:commons-collections:3.2.2:jar" level="project" />
     <orderEntry type="library" name="sbt: commons-configuration:commons-configuration:1.6:jar" level="project" />
     <orderEntry type="library" name="sbt: commons-digester:commons-digester:1.8:jar" level="project" />
@@ -97,7 +100,6 @@
     <orderEntry type="library" scope="PROVIDED" name="sbt: net.sf.opencsv:opencsv:2.3:jar" level="project" />
     <orderEntry type="library" name="sbt: net.sf.py4j:py4j:0.10.4:jar" level="project" />
     <orderEntry type="library" scope="PROVIDED" name="sbt: net.sourceforge.f2j:arpack_combined_all:0.1:jar" level="project" />
-    <orderEntry type="library" scope="PROVIDED" name="sbt: org.antlr:antlr4-runtime:4.5.3:jar" level="project" />
     <orderEntry type="library" name="sbt: org.apache.avro:avro:1.7.7:jar" level="project" />
     <orderEntry type="library" name="sbt: org.apache.avro:avro-ipc:1.7.7:jar" level="project" />
     <orderEntry type="library" name="sbt: org.apache.avro:avro-ipc:1.7.7:tests:jar" level="project" />
@@ -144,8 +146,6 @@
     <orderEntry type="library" name="sbt: org.codehaus.jackson:jackson-jaxrs:1.9.13:jar" level="project" />
     <orderEntry type="library" name="sbt: org.codehaus.jackson:jackson-mapper-asl:1.9.13:jar" level="project" />
     <orderEntry type="library" name="sbt: org.codehaus.jackson:jackson-xc:1.9.13:jar" level="project" />
-    <orderEntry type="library" scope="PROVIDED" name="sbt: org.codehaus.janino:commons-compiler:3.0.0:jar" level="project" />
-    <orderEntry type="library" scope="PROVIDED" name="sbt: org.codehaus.janino:janino:3.0.0:jar" level="project" />
     <orderEntry type="library" name="sbt: org.codehaus.jettison:jettison:1.1:jar" level="project" />
     <orderEntry type="library" name="sbt: org.fusesource.leveldbjni:leveldbjni-all:1.8:jar" level="project" />
     <orderEntry type="library" name="sbt: org.glassfish.hk2:hk2-api:2.4.0-b34:jar" level="project" />

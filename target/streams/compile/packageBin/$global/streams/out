@@ -10,8 +10,6 @@
 [0m[[0mdebug[0m] [0m	  /Users/Phrida/IdeaProjects/Masterprosjekt/target/scala-2.11/classes/TweetGenerator$$anonfun$2.class[0m
 [0m[[0mdebug[0m] [0m	SentimentModel$$typecreator3$1.class[0m
 [0m[[0mdebug[0m] [0m	  /Users/Phrida/IdeaProjects/Masterprosjekt/target/scala-2.11/classes/SentimentModel$$typecreator3$1.class[0m
-[0m[[0mdebug[0m] [0m	TweetGenerator$$anonfun$4$$anonfun$apply$5.class[0m
-[0m[[0mdebug[0m] [0m	  /Users/Phrida/IdeaProjects/Masterprosjekt/target/scala-2.11/classes/TweetGenerator$$anonfun$4$$anonfun$apply$5.class[0m
 [0m[[0mdebug[0m] [0m	TweetGenerator$$anonfun$main$1.class[0m
 [0m[[0mdebug[0m] [0m	  /Users/Phrida/IdeaProjects/Masterprosjekt/target/scala-2.11/classes/TweetGenerator$$anonfun$main$1.class[0m
 [0m[[0mdebug[0m] [0m	TweetGenerator$$anonfun$readFromFile$1.class[0m
@@ -24,6 +22,8 @@
 [0m[[0mdebug[0m] [0m	  /Users/Phrida/IdeaProjects/Masterprosjekt/target/scala-2.11/classes/SentimentModel$$anonfun$getStrippedTweetText$2.class[0m
 [0m[[0mdebug[0m] [0m	TweetGenerator.class[0m
 [0m[[0mdebug[0m] [0m	  /Users/Phrida/IdeaProjects/Masterprosjekt/target/scala-2.11/classes/TweetGenerator.class[0m
+[0m[[0mdebug[0m] [0m	Statistics.class[0m
+[0m[[0mdebug[0m] [0m	  /Users/Phrida/IdeaProjects/Masterprosjekt/target/scala-2.11/classes/Statistics.class[0m
 [0m[[0mdebug[0m] [0m	SentimentModel$$anonfun$1.class[0m
 [0m[[0mdebug[0m] [0m	  /Users/Phrida/IdeaProjects/Masterprosjekt/target/scala-2.11/classes/SentimentModel$$anonfun$1.class[0m
 [0m[[0mdebug[0m] [0m	resources[0m
@@ -38,8 +38,6 @@
 [0m[[0mdebug[0m] [0m	  /Users/Phrida/IdeaProjects/Masterprosjekt/target/scala-2.11/classes/SentimentModel$$anonfun$3.class[0m
 [0m[[0mdebug[0m] [0m	TweetGenerator$$anonfun$main$1$$anonfun$apply$1$$anonfun$apply$2.class[0m
 [0m[[0mdebug[0m] [0m	  /Users/Phrida/IdeaProjects/Masterprosjekt/target/scala-2.11/classes/TweetGenerator$$anonfun$main$1$$anonfun$apply$1$$anonfun$apply$2.class[0m
-[0m[[0mdebug[0m] [0m	TweetGenerator$$anonfun$3$$anonfun$apply$3.class[0m
-[0m[[0mdebug[0m] [0m	  /Users/Phrida/IdeaProjects/Masterprosjekt/target/scala-2.11/classes/TweetGenerator$$anonfun$3$$anonfun$apply$3.class[0m
 [0m[[0mdebug[0m] [0m	TweetGenerator$$anonfun$4$$anonfun$5.class[0m
 [0m[[0mdebug[0m] [0m	  /Users/Phrida/IdeaProjects/Masterprosjekt/target/scala-2.11/classes/TweetGenerator$$anonfun$4$$anonfun$5.class[0m
 [0m[[0mdebug[0m] [0m	TweetGenerator$$anonfun$4.class[0m
@@ -48,8 +46,12 @@
 [0m[[0mdebug[0m] [0m	  /Users/Phrida/IdeaProjects/Masterprosjekt/target/scala-2.11/classes/TweetGenerator$.class[0m
 [0m[[0mdebug[0m] [0m	utils/PropertiesLoader.class[0m
 [0m[[0mdebug[0m] [0m	  /Users/Phrida/IdeaProjects/Masterprosjekt/target/scala-2.11/classes/utils/PropertiesLoader.class[0m
+[0m[[0mdebug[0m] [0m	TweetGenerator$$anonfun$4$$anonfun$apply$3.class[0m
+[0m[[0mdebug[0m] [0m	  /Users/Phrida/IdeaProjects/Masterprosjekt/target/scala-2.11/classes/TweetGenerator$$anonfun$4$$anonfun$apply$3.class[0m
 [0m[[0mdebug[0m] [0m	utils/PropertiesLoader$.class[0m
 [0m[[0mdebug[0m] [0m	  /Users/Phrida/IdeaProjects/Masterprosjekt/target/scala-2.11/classes/utils/PropertiesLoader$.class[0m
+[0m[[0mdebug[0m] [0m	Classifier.class[0m
+[0m[[0mdebug[0m] [0m	  /Users/Phrida/IdeaProjects/Masterprosjekt/target/scala-2.11/classes/Classifier.class[0m
 [0m[[0mdebug[0m] [0m	utils[0m
 [0m[[0mdebug[0m] [0m	  /Users/Phrida/IdeaProjects/Masterprosjekt/target/scala-2.11/classes/utils[0m
 [0m[[0mdebug[0m] [0m	utils/SQLContextSingleton$.class[0m

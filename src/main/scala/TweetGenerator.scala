@@ -25,6 +25,9 @@ object TweetGenerator extends Serializable {
 
   def main(args: Array[String]): Unit = {
 
+    val classification = new Classifier
+
+
     //Inställningar för twitter
     System.setProperty("twitter4j.oauth.consumerKey", "WeJAx0QjHyZuFIuOT0mCAlJqR")
     System.setProperty("twitter4j.oauth.consumerSecret", "AF1PYLqk6XPrgFMlYgDQq3l91v6eHpnimlH1u45OSX3yTggMvP")
@@ -39,7 +42,7 @@ object TweetGenerator extends Serializable {
     val twitterTopic = Set("twitterdata")
     val numThreads = 1
     //val Array(zkQuorum, group, topics, numThreads) = args;
-    val sparkConf = new SparkConf().setAppName("TweetGenerator").setMaster("local[4]")
+    val sparkConf = new SparkConf().setAppName("TweetGenerator")//.setMaster("local[4]")
     sparkConf.set("es.index.auto.create", "true")
     sparkConf.set("es.resource", "visualization/tweets")
     sparkConf.set("es.nodes", "localhost")
@@ -66,7 +69,7 @@ object TweetGenerator extends Serializable {
     writeToFile(initialFile)
     println("Initial file: " + readFromFile())
 
-    def predictSentiment(status: Status): Int = {
+    def predictSentiment(status: Status): String = {
       var returnedSentiment = 0
       val tweetText = replaceNewLines(status.getText)
       val mllibsentiment = {
@@ -76,7 +79,7 @@ object TweetGenerator extends Serializable {
           returnedSentiment = 0 //return neutral sentiment
         }
       }
-      return returnedSentiment
+      return translateSentiment(returnedSentiment)
     }
 
     def translateSentiment(sentiment: Int): String = {
@@ -104,11 +107,17 @@ object TweetGenerator extends Serializable {
       })
     })
 
+    classification.initialize()
+
     //val tweets = KafkaUtils.createStream(ssc, zkQuorum, group, Map("twitterdata" -> 1)).map(_._2)
     val tweets = ssc.socketTextStream("localhost", 10001)
+    tweets.foreachRDD(rdd => classification.classify(rdd.count()))
+
+    val filters = "Trump"
 
     //val filteredTweets = tweets.filter(_.contains(readFromFile()))
-    val filteredTweets = tweets.filter(status => readFromFile().exists(status.contains(_)))
+    //val filteredTweets = tweets.filter(status => readFromFile().exists(status.contains(_)))
+    val filteredTweets = tweets.filter(_.contains(filters))
 
 
 
@@ -117,7 +126,8 @@ object TweetGenerator extends Serializable {
       val hashtags = status.getHashtagEntities().map(_.getText())
       val formatter = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss")
       val sentiment = predictSentiment(status)
-      val translatedSentiment = translateSentiment(sentiment)
+
+
 
 
       HashMap(
@@ -135,18 +145,23 @@ object TweetGenerator extends Serializable {
         "placeCountry" -> Option(status.getPlace).map(place => {s"${place.getCountry}"}),
         "userLanguage" -> status.getUser.getLang,
         "statusLanguage" -> status.getLang,
-        "sentiment" -> translatedSentiment,
+        "sentiment" -> predictSentiment(status),
         "deviceType" -> status.getSource
       )
     })
 
+    //tweetMap.foreachRDD(rdd => classification.classify(rdd.count()))
+
     //tweetMap.print()
 
-    tweetMap.foreachRDD(tweet => EsSpark.saveToEs(tweet, "visualization/tweets"))
+    tweetMap.count()
 
+    //tweetMap.foreachRDD(tweet => EsSpark.saveToEs(tweet, "visualization/tweets"))
 
     ssc.start()
     ssc.awaitTermination()
+
+
 
   }
 
