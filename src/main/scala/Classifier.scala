@@ -12,8 +12,6 @@ class Classifier {
 
   def classify(count: Long): Unit = {
     statistics.addToCount(count)
-
-
   }
 
 

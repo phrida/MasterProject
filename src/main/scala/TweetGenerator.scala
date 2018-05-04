@@ -3,12 +3,14 @@ import java.text.SimpleDateFormat
 
 import twitter4j._
 import net.liftweb.json._
+import org.apache.spark.ml.feature.Word2Vec
 import org.apache.spark.mllib.classification.{NaiveBayes, NaiveBayesModel}
-
+import org.apache.spark.mllib.feature.Word2Vec
+import org.apache.spark.streaming.dstream.DStream
 import org.apache.spark.streaming.kafka.KafkaUtils
 import org.apache.spark.{SparkConf, SparkContext}
 import org.apache.spark.streaming.twitter.TwitterUtils
-import org.apache.spark.streaming.{Minutes, Seconds, StreamingContext}
+import org.apache.spark.streaming.{Milliseconds, Minutes, Seconds, StreamingContext}
 import org.elasticsearch.spark.rdd.EsSpark
 
 import scala.collection.mutable.{ArrayBuffer, ListBuffer}
@@ -22,6 +24,8 @@ import scala.io.Source
 
 
 object TweetGenerator extends Serializable {
+
+  var counter = 0
 
   def main(args: Array[String]): Unit = {
 
@@ -49,7 +53,7 @@ object TweetGenerator extends Serializable {
     sparkConf.set("es.port", "9200")
     sparkConf.set("es.nodes.discovery", "true")
     sparkConf.set("es.net.http.auth.user", "elastic")
-    sparkConf.set("es.net.http.auth.pass", "sCzfSGEHl2pV7LnIFiPU")
+    sparkConf.set("es.net.http.auth.pass", "Dbn5RwvUltlomlot2pnS")
     val index_name = "twitter"
     val ssc = new StreamingContext(sparkConf, Seconds(1))
     ssc.sparkContext.setLogLevel("OFF")
@@ -63,11 +67,6 @@ object TweetGenerator extends Serializable {
     val naiveBayesModel = NaiveBayesModel.load(ssc.sparkContext, PropertiesLoader.naiveBayesModelPath)
 
 
-
-    val initialFile = new ListBuffer[String]
-    initialFile.append("hdjksahjdka")
-    writeToFile(initialFile)
-    println("Initial file: " + readFromFile())
 
     def predictSentiment(status: Status): String = {
       var returnedSentiment = 0
@@ -104,6 +103,7 @@ object TweetGenerator extends Serializable {
         googleWords.foreach(word => words.append(word))
         writeToFile(words)
         println("Words in file: " + readFromFile())
+        println("Counter: " + counter)
       })
     })
 
@@ -111,13 +111,32 @@ object TweetGenerator extends Serializable {
 
     //val tweets = KafkaUtils.createStream(ssc, zkQuorum, group, Map("twitterdata" -> 1)).map(_._2)
     val tweets = ssc.socketTextStream("localhost", 10001)
-    tweets.foreachRDD(rdd => classification.classify(rdd.count()))
+    //tweets.foreachRDD(rdd => classification.classify(rdd.count()))
 
-    val filters = "Trump"
+    val input = ssc.sparkContext.textFile("/home/spnorrha/IdeaProjects/MasterProject/src/main/scala/resources/sample.txt")
+      .map(line => line.split(" ").toSeq)
+
+    /*
+    val word2vec = new Word2Vec
+    val model = word2vec.fit(input)
+
+    val synonyms = model.findSynonyms("1", 5)
+    for ((synonym, cosineSimilarity) <- synonyms) {
+      println(s"$synonym, $cosineSimilarity")
+
+    }*/
+
+
+
+
+    //val filters = "Trump"
+
 
     //val filteredTweets = tweets.filter(_.contains(readFromFile()))
-    //val filteredTweets = tweets.filter(status => readFromFile().exists(status.contains(_)))
-    val filteredTweets = tweets.filter(_.contains(filters))
+
+    val filteredTweets = tweets.filter(status => readFromFile().exists(status.contains(_)))
+
+    //val filteredTweets = tweets.filter(_.contains(filters))
 
 
 
@@ -126,6 +145,7 @@ object TweetGenerator extends Serializable {
       val hashtags = status.getHashtagEntities().map(_.getText())
       val formatter = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss")
       val sentiment = predictSentiment(status)
+
 
 
 
@@ -151,12 +171,12 @@ object TweetGenerator extends Serializable {
     })
 
 
+    tweetMap.foreachRDD(rdd => classification.classify(rdd.count()))
 
-    //tweetMap.print()
+    tweetMap.print()
 
-    //tweetMap.count()
 
-    tweetMap.foreachRDD(tweet => EsSpark.saveToEs(tweet, "visualization/tweets"))
+    //tweetMap.foreachRDD(tweet => EsSpark.saveToEs(tweet, "visualization/tweets"))
 
     ssc.start()
     ssc.awaitTermination()
@@ -176,14 +196,16 @@ object TweetGenerator extends Serializable {
     list.to[ListBuffer]
   }
 
+
   def writeToFile(list: ListBuffer[String]): Any = {
 
-    val file = new File("/Users/Phrida/IdeaProjects/Masterprosjekt/src/main/scala/resources/output.txt")
+    val file = new File("/home/spnorrha/IdeaProjects/MasterProject/src/main/scala/resources/output.txt")
     println(file.exists())
-    val writer = new PrintWriter(file)
+    val writer = new FileWriter(file, true)
 
     list.foreach(word => {
-      writer.append(word + ",")
+      counter += 1
+      writer.write(word + ",")
     })
 
     writer.close()
@@ -192,7 +214,7 @@ object TweetGenerator extends Serializable {
   def readFromFile(): List[String] = {
     /*val resource = getClass.getResourceAsStream("/resources/output.txt")
     Source.fromInputStream(resource).getLines().to[ListBuffer]*/
-    Source.fromFile("/Users/Phrida/IdeaProjects/Masterprosjekt/src/main/scala/resources/output.txt").getLines.to[List].flatMap(_.split(","))
+    Source.fromFile("/home/spnorrha/IdeaProjects/MasterProject/src/main/scala/resources/output.txt").getLines.to[List].flatMap(_.split(","))
   }
 
   def replaceNewLines(tweetText: String): String = {

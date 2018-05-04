@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 [0m[[0minfo[0m] [0mPackaging /Users/Phrida/IdeaProjects/Masterprosjekt/target/scala-2.11/twittervisualizationproject_2.11-1.0.jar ...[0m
 [0m[[0mdebug[0m] [0mInput file mappings:[0m
 [0m[[0mdebug[0m] [0m	TweetGenerator$$anonfun$1.class[0m
@@ -69,3 +70,6 @@
 [0m[[0mdebug[0m] [0m	TweetGenerator$$anonfun$main$2.class[0m
 [0m[[0mdebug[0m] [0m	  /Users/Phrida/IdeaProjects/Masterprosjekt/target/scala-2.11/classes/TweetGenerator$$anonfun$main$2.class[0m
 [0m[[0minfo[0m] [0mDone packaging.[0m
+=======
+[0m[[0mdebug[0m] [0mJar uptodate: /home/spnorrha/IdeaProjects/MasterProject/target/scala-2.11/twittervisualizationproject_2.11-1.0.jar[0m
+>>>>>>> 614c38dd2058d5c6f084e3fc1b3d223fdb5eed45
