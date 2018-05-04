@@ -150,13 +150,13 @@ object TweetGenerator extends Serializable {
       )
     })
 
-    //tweetMap.foreachRDD(rdd => classification.classify(rdd.count()))
+
 
     //tweetMap.print()
 
-    tweetMap.count()
+    //tweetMap.count()
 
-    //tweetMap.foreachRDD(tweet => EsSpark.saveToEs(tweet, "visualization/tweets"))
+    tweetMap.foreachRDD(tweet => EsSpark.saveToEs(tweet, "visualization/tweets"))
 
     ssc.start()
     ssc.awaitTermination()
