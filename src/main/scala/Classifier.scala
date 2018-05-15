@@ -14,5 +14,13 @@ class Classifier {
     statistics.addToCount(count)
   }
 
+  def setTime(time: Double): Unit = {
+    statistics.getTime(time)
+  }
+
+  def totalTPS(count: Long): Unit = {
+    statistics.getTotalTPS(count)
+  }
+
 
 }

@@ -3,19 +3,13 @@ import java.text.SimpleDateFormat
 
 import twitter4j._
 import net.liftweb.json._
-import org.apache.spark.ml.feature.Word2Vec
 import org.apache.spark.mllib.classification.{NaiveBayes, NaiveBayesModel}
-import org.apache.spark.mllib.feature.Word2Vec
-import org.apache.spark.streaming.dstream.DStream
 import org.apache.spark.streaming.kafka.KafkaUtils
 import org.apache.spark.{SparkConf, SparkContext}
-import org.apache.spark.streaming.twitter.TwitterUtils
 import org.apache.spark.streaming.{Milliseconds, Minutes, Seconds, StreamingContext}
-import org.elasticsearch.spark.rdd.EsSpark
 
 import scala.collection.mutable.{ArrayBuffer, ListBuffer}
 import scalaj.http.{Http, HttpResponse}
-import twitter4j.conf.ConfigurationBuilder
 import utils.{PropertiesLoader, SQLContextSingleton}
 
 import scala.collection.immutable.HashMap
@@ -23,13 +17,14 @@ import scala.io.Source
 
 
 
-object TweetGenerator extends Serializable {
+object TweetGenerator {
 
   var counter = 0
+  val classification = new Classifier
 
   def main(args: Array[String]): Unit = {
 
-    val classification = new Classifier
+
 
 
     //Inställningar för twitter
@@ -53,7 +48,8 @@ object TweetGenerator extends Serializable {
     sparkConf.set("es.port", "9200")
     sparkConf.set("es.nodes.discovery", "true")
     sparkConf.set("es.net.http.auth.user", "elastic")
-    sparkConf.set("es.net.http.auth.pass", "Dbn5RwvUltlomlot2pnS")
+    sparkConf.set("es.net.http.auth.pass", "sCzfSGEHl2pV7LnIFiPU")
+    //sparkConf.set("es.net.http.auth.pass", "Dbn5RwvUltlomlot2pnS")
     val index_name = "twitter"
     val ssc = new StreamingContext(sparkConf, Seconds(1))
     ssc.sparkContext.setLogLevel("OFF")
@@ -111,43 +107,16 @@ object TweetGenerator extends Serializable {
 
     //val tweets = KafkaUtils.createStream(ssc, zkQuorum, group, Map("twitterdata" -> 1)).map(_._2)
     val tweets = ssc.socketTextStream("localhost", 10001)
-    //tweets.foreachRDD(rdd => classification.classify(rdd.count()))
+    //tweets.foreachRDD(rdd => classification.totalTPS(rdd.count()))
 
-    val input = ssc.sparkContext.textFile("/home/spnorrha/IdeaProjects/MasterProject/src/main/scala/resources/sample.txt")
-      .map(line => line.split(" ").toSeq)
-
-    /*
-    val word2vec = new Word2Vec
-    val model = word2vec.fit(input)
-
-    val synonyms = model.findSynonyms("1", 5)
-    for ((synonym, cosineSimilarity) <- synonyms) {
-      println(s"$synonym, $cosineSimilarity")
-
-    }*/
-
-
-
-
-    //val filters = "Trump"
-
-
-    //val filteredTweets = tweets.filter(_.contains(readFromFile()))
 
     val filteredTweets = tweets.filter(status => readFromFile().exists(status.contains(_)))
-
-    //val filteredTweets = tweets.filter(_.contains(filters))
-
-
 
     val tweetMap = filteredTweets.map(json => {
       val status = TwitterObjectFactory.createStatus(json)
       val hashtags = status.getHashtagEntities().map(_.getText())
       val formatter = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss")
       val sentiment = predictSentiment(status)
-
-
-
 
 
       HashMap(
@@ -165,14 +134,15 @@ object TweetGenerator extends Serializable {
         "placeCountry" -> Option(status.getPlace).map(place => {s"${place.getCountry}"}),
         "userLanguage" -> status.getUser.getLang,
         "statusLanguage" -> status.getLang,
-        "sentiment" -> predictSentiment(status),
-        "deviceType" -> status.getSource
+        "sentiment" -> sentiment,
+        "deviceType" -> getStrippedDeviceType(status.getSource)
       )
     })
 
 
     tweetMap.foreachRDD(rdd => classification.classify(rdd.count()))
 
+    //tweetMap.foreachRDD(rdd => rdd.count())
     tweetMap.print()
 
 
@@ -185,12 +155,42 @@ object TweetGenerator extends Serializable {
 
   }
 
+  def time[R](block: => R): R = {
+    val t0 = System.nanoTime()
+    val result = block    // call-by-name
+    val t1 = System.nanoTime()
+    val time = (t1 - t0) / 1000000.0
+    println("Elapsed time: " + time + " ms")
+    classification.setTime(time)
+    result
+  }
+
+  def getStrippedDeviceType(tweetText: String): String = {
+    tweetText
+      .replaceAll("\n", "")
+      .replaceAll("rt\\s+", "")
+      .replaceAll("\\s+@\\w+", "")
+      .replaceAll("@\\w+", "")
+      .replaceAll("\\s+#\\w+", "")
+      .replaceAll("#\\w+", "")
+      .replaceAll("(?:<a href=\")", "")
+      .replaceAll("(?:https?|http?)://[\\w/%.-]+", "")
+      .replaceAll("(?:https?|http?)://[\\w/%.-]+\\s+", "")
+      .replaceAll("(?:https?|http?)//[\\w/%.-]+\\s+", "")
+      .replaceAll("(?:https?|http?)//[\\w/%.-]+", "")
+      .replaceAll("</a>", "")
+      .replaceAll("\" rel=\"nofollow\">", "")
+
+
+  }
+
+
+
   def getGoogleList(keyword: String): ListBuffer[String] = {
-    //println("Keyword:" + keyword)
     val response: HttpResponse[String] = Http("https://kgsearch.googleapis.com/v1/entities:search")
-      .params(Seq("query" -> keyword.toString, "limit" -> 10.toString, "key" -> "AIzaSyAR0679Of_1TcUWQhgQS-_7hYSSv3SnE8s"))
+      .params(Seq("query" -> keyword.toString, "limit" -> 9.toString, "key" -> "AIzaSyAR0679Of_1TcUWQhgQS-_7hYSSv3SnE8s"))
       .asString
-    val json = parse(response.body)
+    val json = parse(response.body.replaceAll(",", ""))
     val listObject = json \\ "name"
     val list: List[String] = listObject \\ classOf[JString]
     list.to[ListBuffer]
@@ -199,9 +199,12 @@ object TweetGenerator extends Serializable {
 
   def writeToFile(list: ListBuffer[String]): Any = {
 
-    val file = new File("/home/spnorrha/IdeaProjects/MasterProject/src/main/scala/resources/output.txt")
+    //val file = new File("/home/spnorrha/IdeaProjects/MasterProject/src/main/scala/resources/output.txt")
+    val file = new File("/Users/Phrida/IdeaProjects/Masterprosjekt/src/main/scala/resources/output.txt")
     println(file.exists())
     val writer = new FileWriter(file, true)
+
+    println("list: " + list)
 
     list.foreach(word => {
       counter += 1
@@ -214,7 +217,9 @@ object TweetGenerator extends Serializable {
   def readFromFile(): List[String] = {
     /*val resource = getClass.getResourceAsStream("/resources/output.txt")
     Source.fromInputStream(resource).getLines().to[ListBuffer]*/
-    Source.fromFile("/home/spnorrha/IdeaProjects/MasterProject/src/main/scala/resources/output.txt").getLines.to[List].flatMap(_.split(","))
+    //Source.fromFile("/home/spnorrha/IdeaProjects/MasterProject/src/main/scala/resources/output.txt").getLines.to[List].flatMap(_.split(","))
+    Source.fromFile("/Users/Phrida/IdeaProjects/Masterprosjekt/src/main/scala/resources/output.txt").getLines.to[List].flatMap(_.split(","))
+
   }
 
   def replaceNewLines(tweetText: String): String = {
