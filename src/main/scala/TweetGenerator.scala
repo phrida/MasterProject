@@ -7,6 +7,7 @@ import org.apache.spark.mllib.classification.{NaiveBayes, NaiveBayesModel}
 import org.apache.spark.streaming.kafka.KafkaUtils
 import org.apache.spark.{SparkConf, SparkContext}
 import org.apache.spark.streaming.{Milliseconds, Minutes, Seconds, StreamingContext}
+import org.elasticsearch.spark.rdd.EsSpark
 
 import scala.collection.mutable.{ArrayBuffer, ListBuffer}
 import scalaj.http.{Http, HttpResponse}
@@ -48,11 +49,12 @@ object TweetGenerator {
     sparkConf.set("es.port", "9200")
     sparkConf.set("es.nodes.discovery", "true")
     sparkConf.set("es.net.http.auth.user", "elastic")
-    sparkConf.set("es.net.http.auth.pass", "sCzfSGEHl2pV7LnIFiPU")
-    //sparkConf.set("es.net.http.auth.pass", "Dbn5RwvUltlomlot2pnS")
+    //sparkConf.set("es.net.http.auth.pass", "sCzfSGEHl2pV7LnIFiPU")
+    sparkConf.set("es.net.http.auth.pass", "Dbn5RwvUltlomlot2pnS")
     val index_name = "twitter"
     val ssc = new StreamingContext(sparkConf, Seconds(1))
     ssc.sparkContext.setLogLevel("OFF")
+    classification.initialize()
 
     val stopWordsList = ssc.sparkContext.broadcast(loadStopWords())
 
@@ -86,6 +88,8 @@ object TweetGenerator {
       }
     }
 
+    /*
+
     val filterLines = KafkaUtils.createStream(ssc, zkQuorum, group, Map("keyworddata" -> 1)).map(_._2)
     val filterWords = filterLines.flatMap(_.split(" "))
     filterWords.print()
@@ -101,18 +105,17 @@ object TweetGenerator {
         println("Words in file: " + readFromFile())
         println("Counter: " + counter)
       })
-    })
-
-    classification.initialize()
-
-    //val tweets = KafkaUtils.createStream(ssc, zkQuorum, group, Map("twitterdata" -> 1)).map(_._2)
-    val tweets = ssc.socketTextStream("localhost", 10001)
-    //tweets.foreachRDD(rdd => classification.totalTPS(rdd.count()))
+    })*/
 
 
-    val filteredTweets = tweets.filter(status => readFromFile().exists(status.contains(_)))
 
-    val tweetMap = filteredTweets.map(json => {
+    //val tweets = KafkaUtils.createStream(ssc, zkQuorum, group, Map("twittergenerator" -> 1)).map(_._2)
+    val tweets = ssc.socketTextStream("10.24.21.30", 10001)
+    tweets.foreachRDD(rdd => classification.totalTPS(rdd.count()))
+
+    //val filteredTweets = tweets.filter(status => time { readFromFile().exists(status.contains(_)) })
+
+    val tweetMap = tweets.map(json => {
       val status = TwitterObjectFactory.createStatus(json)
       val hashtags = status.getHashtagEntities().map(_.getText())
       val formatter = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss")
@@ -135,7 +138,8 @@ object TweetGenerator {
         "userLanguage" -> status.getUser.getLang,
         "statusLanguage" -> status.getLang,
         "sentiment" -> sentiment,
-        "deviceType" -> getStrippedDeviceType(status.getSource)
+        "deviceType" -> getStrippedDeviceType(status.getSource),
+        "retweetCount" -> status.getRetweetCount
       )
     })
 
@@ -143,7 +147,7 @@ object TweetGenerator {
     tweetMap.foreachRDD(rdd => classification.classify(rdd.count()))
 
     //tweetMap.foreachRDD(rdd => rdd.count())
-    tweetMap.print()
+    //tweetMap.print()
 
 
     //tweetMap.foreachRDD(tweet => EsSpark.saveToEs(tweet, "visualization/tweets"))
@@ -160,7 +164,7 @@ object TweetGenerator {
     val result = block    // call-by-name
     val t1 = System.nanoTime()
     val time = (t1 - t0) / 1000000.0
-    println("Elapsed time: " + time + " ms")
+    //println("Elapsed time: " + time + " ms")
     classification.setTime(time)
     result
   }
@@ -180,8 +184,7 @@ object TweetGenerator {
       .replaceAll("(?:https?|http?)//[\\w/%.-]+", "")
       .replaceAll("</a>", "")
       .replaceAll("\" rel=\"nofollow\">", "")
-
-
+      .replaceAll("#!/download/ipad", "")
   }
 
 
@@ -198,9 +201,8 @@ object TweetGenerator {
 
 
   def writeToFile(list: ListBuffer[String]): Any = {
-
-    //val file = new File("/home/spnorrha/IdeaProjects/MasterProject/src/main/scala/resources/output.txt")
-    val file = new File("/Users/Phrida/IdeaProjects/Masterprosjekt/src/main/scala/resources/output.txt")
+    val file = new File("/home/spnorrha/IdeaProjects/MasterProject/src/main/scala/resources/output.txt")
+    //val file = new File("/Users/Phrida/IdeaProjects/Masterprosjekt/src/main/scala/resources/output.txt")
     println(file.exists())
     val writer = new FileWriter(file, true)
 
@@ -217,8 +219,8 @@ object TweetGenerator {
   def readFromFile(): List[String] = {
     /*val resource = getClass.getResourceAsStream("/resources/output.txt")
     Source.fromInputStream(resource).getLines().to[ListBuffer]*/
-    //Source.fromFile("/home/spnorrha/IdeaProjects/MasterProject/src/main/scala/resources/output.txt").getLines.to[List].flatMap(_.split(","))
-    Source.fromFile("/Users/Phrida/IdeaProjects/Masterprosjekt/src/main/scala/resources/output.txt").getLines.to[List].flatMap(_.split(","))
+    Source.fromFile("/home/spnorrha/IdeaProjects/MasterProject/src/main/scala/resources/output.txt").getLines.to[List].flatMap(_.split(","))
+    //Source.fromFile("/Users/Phrida/IdeaProjects/Masterprosjekt/src/main/scala/resources/output.txt").getLines.to[List].flatMap(_.split(","))
 
   }
 

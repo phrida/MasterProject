@@ -19,8 +19,9 @@ class Classifier {
   }
 
   def totalTPS(count: Long): Unit = {
-    statistics.getTotalTPS(count)
+    statistics.addTotal(count)
   }
+
 
 
 }

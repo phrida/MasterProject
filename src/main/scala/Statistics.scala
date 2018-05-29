@@ -8,18 +8,20 @@ class Statistics extends TimerTask {
   var time: Double = 0L
   var total: Long = 0L
   var startTime: Long = System.currentTimeMillis()
-  var file1: Path = Paths.get("/Users/Phrida/PlotResults/tps.csv")
-  var file2: Path = Paths.get("/Users/Phrida/PlotResults/keywords.csv")
-  var file3: Path = Paths.get("/Users/Phrida/PlotResults/keywords_tps.csv")
-  //Files.write(file1, "TIME,\tCOUNT\n".getBytes(), StandardOpenOption.APPEND)
-  //Files.write(file2, "TIME,\tCOUNT\n".getBytes(), StandardOpenOption.APPEND)
-  Files.write(file3, "#TPS,\t#KEYWORDS\n".getBytes(), StandardOpenOption.APPEND)
+  //var file1: Path = Paths.get("/Users/Phrida/PlotResults/tps.csv")
+  //var file2: Path = Paths.get("/Users/Phrida/PlotResults/keywords.csv")
 
-  def log1(count: Long): Unit = {
+  var file1: Path = Paths.get("/home/spnorrha/PlotResults/tps.csv")
+  var file2: Path = Paths.get("/home/spnorrha/PlotResults/keywords.csv")
+
+  Files.write(file1, "TIME,\tTOTAL,\tCOUNT\n".getBytes(), StandardOpenOption.APPEND)
+  //Files.write(file2, "TIME,\tCOUNT,\tMATCH\n".getBytes(), StandardOpenOption.APPEND)
+
+  def log1(count: Long, total: Long): Unit = {
     //println("Start time: " + startTime)
     var timeDelta = (System.currentTimeMillis() - startTime) / 1000
-    //println("Time delta: " + timeDelta)
-    val logEntry = timeDelta.toString + count.toString + "\n"
+    println("Time delta: " + timeDelta)
+    val logEntry = timeDelta.toString + ",\t" + total.toString + ",\t" + count.toString + "\n"
     //println("LogEntry: " + logEntry)
 
     try {
@@ -30,10 +32,10 @@ class Statistics extends TimerTask {
 
   }
 
-  def log2(deltaTime: Double): Unit = {
+  def log2(deltaTime: Double, count: Long): Unit = {
     val keywords = TweetGenerator.readFromFile().size
     println("Number of keywords: " + keywords)
-    val logEntry = deltaTime.toString + ",\t" + keywords.toString + "\n"
+    val logEntry = deltaTime.toString + ",\t" + keywords.toString + ",\t" + count.toString + "\n"
     try {
       Files.write(file2, logEntry.getBytes(), StandardOpenOption.APPEND)
     } catch {
@@ -41,16 +43,6 @@ class Statistics extends TimerTask {
     }
   }
 
-  def log3(count: Long): Unit = {
-    val keywords = TweetGenerator.readFromFile().size
-    println("Number of keywords: " + keywords)
-    val logEntry = count.toString + ",\t" + keywords.toString + "\n"
-    try {
-      Files.write(file3, logEntry.getBytes(), StandardOpenOption.APPEND)
-    } catch {
-      case e: IOException => e.printStackTrace()
-    }
-  }
 
   def addToCount(i: Long): Unit = {
     count += i
@@ -60,8 +52,8 @@ class Statistics extends TimerTask {
     this.time = time
   }
 
-  def getTotalTPS(j: Long): Unit = {
-    total += j
+  def addTotal(i: Long): Unit = {
+    total += i
   }
 
 
@@ -76,17 +68,18 @@ class Statistics extends TimerTask {
       log(total)
     }*/
 
-    /*For batchsize = 1
-    log1(count)
-    count=0L*/
-
-    /*For keyword test
-    log2(time)
-    time = 0L*/
-
-    //For keyword_tps test
-    log3(count)
+    //For batchsize = 1
+    log1(count, total)
     count=0L
+    total=0L
+
+    //For keyword test
+    /*log2(time, count)
+    time = 0L
+    count = 0L*/
+
+
+
 
 
   }
