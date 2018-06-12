@@ -3,15 +3,18 @@ import java.text.SimpleDateFormat
 
 import twitter4j._
 import net.liftweb.json._
-import org.apache.spark.mllib.classification.{NaiveBayes, NaiveBayesModel}
-import org.apache.spark.streaming.kafka.KafkaUtils
-import org.apache.spark.{SparkConf, SparkContext}
-import org.apache.spark.streaming.{Milliseconds, Minutes, Seconds, StreamingContext}
+import org.apache.kafka.common.serialization.StringDeserializer
+import org.apache.spark.mllib.classification.{NaiveBayesModel}
+import org.apache.spark.streaming.kafka010.KafkaUtils
+import org.apache.spark.streaming.kafka010.LocationStrategies.PreferConsistent
+import org.apache.spark.streaming.kafka010.ConsumerStrategies.Subscribe
+import org.apache.spark.{SparkConf}
+import org.apache.spark.streaming.{Seconds, StreamingContext}
 import org.elasticsearch.spark.rdd.EsSpark
 
-import scala.collection.mutable.{ArrayBuffer, ListBuffer}
+import scala.collection.mutable.{ListBuffer}
 import scalaj.http.{Http, HttpResponse}
-import utils.{PropertiesLoader, SQLContextSingleton}
+import utils.{PropertiesLoader}
 
 import scala.collection.immutable.HashMap
 import scala.io.Source
@@ -20,48 +23,52 @@ import scala.io.Source
 
 object TweetGenerator {
 
-  var counter = 0
   val classification = new Classifier
 
   def main(args: Array[String]): Unit = {
 
 
-
-
-    //Inställningar för twitter
+    //Settings for Twitter4j
     System.setProperty("twitter4j.oauth.consumerKey", "WeJAx0QjHyZuFIuOT0mCAlJqR")
     System.setProperty("twitter4j.oauth.consumerSecret", "AF1PYLqk6XPrgFMlYgDQq3l91v6eHpnimlH1u45OSX3yTggMvP")
     System.setProperty("twitter4j.oauth.accessToken", "384519993-b2PNRU3TiLxt5gTSUOlUamac7UuHZvWiF2pk9ZqU")
     System.setProperty("twitter4j.oauth.accessTokenSecret", "xRnVgh2CpD41GKi0W0B2Z5JA6S8JRIL83W8NuuiuK4CtW")
 
 
+    //Setting for Kafka
+    val kafkaParams = Map[String, Object](
+      "bootstrap.servers" -> "localhost:9092",
+      "key.deserializer" -> classOf[StringDeserializer],
+      "value.deserializer" -> classOf[StringDeserializer],
+      "group.id" -> "my-group",
+      "auto.offset.reset" -> "latest",
+      "enable.auto.commit" -> (false: java.lang.Boolean)
+    )
 
-    val zkQuorum = "localhost:2181"
-    val kafkaParams = Map("metadata.broker.list" -> "localhost:9092")
-    val group = "my-group"
-    val twitterTopic = Set("twitterdata")
-    val numThreads = 1
-    //val Array(zkQuorum, group, topics, numThreads) = args;
-    val sparkConf = new SparkConf().setAppName("TweetGenerator")//.setMaster("local[4]")
+    val twitterTopic = Array("twitterdata")
+    val keywordTopic = Array("keyworddata")
+
+
+    //Settings for Spark and Elasticsearch
+    val sparkConf = new SparkConf().setAppName("TweetGenerator")
     sparkConf.set("es.index.auto.create", "true")
     sparkConf.set("es.resource", "visualization/tweets")
     sparkConf.set("es.nodes", "localhost")
     sparkConf.set("es.port", "9200")
     sparkConf.set("es.nodes.discovery", "true")
     sparkConf.set("es.net.http.auth.user", "elastic")
-    //sparkConf.set("es.net.http.auth.pass", "sCzfSGEHl2pV7LnIFiPU")
     sparkConf.set("es.net.http.auth.pass", "Dbn5RwvUltlomlot2pnS")
     val index_name = "twitter"
     val ssc = new StreamingContext(sparkConf, Seconds(1))
     ssc.sparkContext.setLogLevel("OFF")
-    classification.initialize()
+
 
     val stopWordsList = ssc.sparkContext.broadcast(loadStopWords())
 
     //Create Naive Bayes Model
-    //SentimentModel.createAndSaveNBModel(ssc.sparkContext, stopWordsList)
+    SentimentModel.createAndSaveNBModel(ssc.sparkContext, stopWordsList)
     //Validate Accuracy
-    //SentimentModel.validateAccuracyOfNBModel(ssc.sparkContext, stopWordsList)
+    SentimentModel.validateAccuracyOfNBModel(ssc.sparkContext, stopWordsList)
     val naiveBayesModel = NaiveBayesModel.load(ssc.sparkContext, PropertiesLoader.naiveBayesModelPath)
 
 
@@ -88,34 +95,29 @@ object TweetGenerator {
       }
     }
 
-    /*
 
-    val filterLines = KafkaUtils.createStream(ssc, zkQuorum, group, Map("keyworddata" -> 1)).map(_._2)
+    val filterLines = KafkaUtils.createDirectStream[String, String](ssc, PreferConsistent, Subscribe[String, String](twitterTopic, kafkaParams)).map(record => (record.value))
     val filterWords = filterLines.flatMap(_.split(" "))
-    filterWords.print()
 
     filterWords.foreachRDD(rdd => {
       rdd.foreach(word => {
         val words = new ListBuffer[String]
         words.append(word)
         val googleWords = getGoogleList(word)
-        println("Word to append: " + word)
         googleWords.foreach(word => words.append(word))
         writeToFile(words)
-        println("Words in file: " + readFromFile())
-        println("Counter: " + counter)
       })
-    })*/
+    })
 
 
 
-    //val tweets = KafkaUtils.createStream(ssc, zkQuorum, group, Map("twittergenerator" -> 1)).map(_._2)
-    val tweets = ssc.socketTextStream("10.24.21.30", 10001)
-    tweets.foreachRDD(rdd => classification.totalTPS(rdd.count()))
+    val tweets = KafkaUtils.createDirectStream[String, String](ssc, PreferConsistent, Subscribe[String, String](keywordTopic, kafkaParams)).map(record => (record.value))
+    classification.initialize()
 
-    //val filteredTweets = tweets.filter(status => time { readFromFile().exists(status.contains(_)) })
+    //Filter Tweets
+    val filteredTweets = tweets.filter(status => readFromFile().exists(status.contains(_)))
 
-    val tweetMap = tweets.map(json => {
+    val tweetMap = filteredTweets.map(json => {
       val status = TwitterObjectFactory.createStatus(json)
       val hashtags = status.getHashtagEntities().map(_.getText())
       val formatter = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss")
@@ -143,19 +145,10 @@ object TweetGenerator {
       )
     })
 
-
-    tweetMap.foreachRDD(rdd => classification.classify(rdd.count()))
-
-    //tweetMap.foreachRDD(rdd => rdd.count())
-    //tweetMap.print()
-
-
-    //tweetMap.foreachRDD(tweet => EsSpark.saveToEs(tweet, "visualization/tweets"))
+    tweetMap.foreachRDD(tweet => EsSpark.saveToEs(tweet, "visualization/tweets"))
 
     ssc.start()
     ssc.awaitTermination()
-
-
 
   }
 
@@ -164,7 +157,6 @@ object TweetGenerator {
     val result = block    // call-by-name
     val t1 = System.nanoTime()
     val time = (t1 - t0) / 1000000.0
-    //println("Elapsed time: " + time + " ms")
     classification.setTime(time)
     result
   }
@@ -202,26 +194,16 @@ object TweetGenerator {
 
   def writeToFile(list: ListBuffer[String]): Any = {
     val file = new File("/home/spnorrha/IdeaProjects/MasterProject/src/main/scala/resources/output.txt")
-    //val file = new File("/Users/Phrida/IdeaProjects/Masterprosjekt/src/main/scala/resources/output.txt")
-    println(file.exists())
     val writer = new FileWriter(file, true)
-
-    println("list: " + list)
-
     list.foreach(word => {
-      counter += 1
       writer.write(word + ",")
     })
-
     writer.close()
   }
 
-  def readFromFile(): List[String] = {
-    /*val resource = getClass.getResourceAsStream("/resources/output.txt")
-    Source.fromInputStream(resource).getLines().to[ListBuffer]*/
-    Source.fromFile("/home/spnorrha/IdeaProjects/MasterProject/src/main/scala/resources/output.txt").getLines.to[List].flatMap(_.split(","))
-    //Source.fromFile("/Users/Phrida/IdeaProjects/Masterprosjekt/src/main/scala/resources/output.txt").getLines.to[List].flatMap(_.split(","))
 
+  def readFromFile(): List[String] = {
+    Source.fromFile("/home/spnorrha/IdeaProjects/MasterProject/src/main/scala/resources/output.txt").getLines.to[List].flatMap(_.split(","))
   }
 
   def replaceNewLines(tweetText: String): String = {
@@ -238,10 +220,6 @@ object TweetGenerator {
   def isTweetInEnglish(status: Status): Boolean = {
     status.getLang == "en" && status.getUser.getLang == "en"
   }
-
-
-
-
 
 
 }
