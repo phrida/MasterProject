@@ -29,10 +29,10 @@ object TweetGenerator {
 
 
     //Settings for Twitter4j
-    System.setProperty("twitter4j.oauth.consumerKey", "WeJAx0QjHyZuFIuOT0mCAlJqR")
-    System.setProperty("twitter4j.oauth.consumerSecret", "AF1PYLqk6XPrgFMlYgDQq3l91v6eHpnimlH1u45OSX3yTggMvP")
-    System.setProperty("twitter4j.oauth.accessToken", "384519993-b2PNRU3TiLxt5gTSUOlUamac7UuHZvWiF2pk9ZqU")
-    System.setProperty("twitter4j.oauth.accessTokenSecret", "xRnVgh2CpD41GKi0W0B2Z5JA6S8JRIL83W8NuuiuK4CtW")
+    System.setProperty("twitter4j.oauth.consumerKey", "consumerKey")
+    System.setProperty("twitter4j.oauth.consumerSecret", "consumerSecret")
+    System.setProperty("twitter4j.oauth.accessToken", "accessToken")
+    System.setProperty("twitter4j.oauth.accessTokenSecret", "accessTokenSecret")
 
 
     //Setting for Kafka
@@ -56,8 +56,8 @@ object TweetGenerator {
     sparkConf.set("es.nodes", "localhost")
     sparkConf.set("es.port", "9200")
     sparkConf.set("es.nodes.discovery", "true")
-    sparkConf.set("es.net.http.auth.user", "elastic")
-    sparkConf.set("es.net.http.auth.pass", "Dbn5RwvUltlomlot2pnS")
+    sparkConf.set("es.net.http.auth.user", "username")
+    sparkConf.set("es.net.http.auth.pass", "password")
     val index_name = "twitter"
     val ssc = new StreamingContext(sparkConf, Seconds(1))
     ssc.sparkContext.setLogLevel("OFF")
@@ -183,7 +183,7 @@ object TweetGenerator {
 
   def getGoogleList(keyword: String): ListBuffer[String] = {
     val response: HttpResponse[String] = Http("https://kgsearch.googleapis.com/v1/entities:search")
-      .params(Seq("query" -> keyword.toString, "limit" -> 9.toString, "key" -> "AIzaSyAR0679Of_1TcUWQhgQS-_7hYSSv3SnE8s"))
+      .params(Seq("query" -> keyword.toString, "limit" -> 9.toString, "key" -> "apiKey"))
       .asString
     val json = parse(response.body.replaceAll(",", ""))
     val listObject = json \\ "name"
